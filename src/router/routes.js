@@ -18,6 +18,11 @@ const routes = [
       { path: "", component: () => import("pages/Accounts/SignIn.vue") },
     ],
   },
+  {
+    path: "/dashboard",
+    component: () => import("src/layouts/DashboardLayout.vue"),
+    children: [{ path: "", component: () => import("pages/Dashboard.vue") }],
+  },
 
   // Always leave this as last one,
   // but you can also remove it
