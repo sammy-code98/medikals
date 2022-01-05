@@ -10,15 +10,27 @@
       </div>
     </div>
     <EventCard/>
+     <div class="row justify-between q-pa-md">
+      <div class="text-accent text-font text-h6 text-weight-thin q-mt-md">
+        Let's find you a doctor
+      </div>
+      <div class="q-mt-sm">
+          <q-btn flat color="primary" round icon="mdi-tune-variant" />
+      </div>
+    </div>
+    <FindTab/>
+
   </div>
 </template>
 <script>
 import SearchInput from "../components/SearchInput.vue";
 import EventCard from "../components/EventCard.vue"
+import FindTab from "../components/FindTab.vue"
 export default {
   components: {
     SearchInput,
-    EventCard
+    EventCard,
+    FindTab
   },
   setup() {},
 };
