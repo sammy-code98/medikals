@@ -9,13 +9,16 @@
         See all
       </div>
     </div>
+    <EventCard/>
   </div>
 </template>
 <script>
 import SearchInput from "../components/SearchInput.vue";
+import EventCard from "../components/EventCard.vue"
 export default {
   components: {
     SearchInput,
+    EventCard
   },
   setup() {},
 };
