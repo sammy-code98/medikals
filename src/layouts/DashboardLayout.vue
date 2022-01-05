@@ -12,7 +12,7 @@
             class="text-primary"
             style="font-size: 2em"
           />
-          <span class="text-primary q-ma-sm text-primary text-subtitle1 text-font">Lagos, Nigeria</span>
+          <span class="q-ma-sm text-accent text-subtitle1 text-font">Lagos, Nigeria</span>
         </div>
         <q-space />
         <q-avatar rounded class="q-mx-sm">
