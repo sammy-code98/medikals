@@ -19,6 +19,7 @@
       </div>
     </div>
     <FindTab/>
+    <DoctorCard/>
 
   </div>
 </template>
@@ -26,11 +27,13 @@
 import SearchInput from "../components/SearchInput.vue";
 import EventCard from "../components/EventCard.vue"
 import FindTab from "../components/FindTab.vue"
+import DoctorCard from "../components/DoctorCard.vue"
 export default {
   components: {
     SearchInput,
     EventCard,
-    FindTab
+    FindTab,
+    DoctorCard
   },
   setup() {},
 };
