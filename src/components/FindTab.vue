@@ -22,7 +22,7 @@
       color="grey-7"
       no-caps
       class="text-font border"
-      label="Dentist"
+      label="Anesthesiologists"
     />
     <q-btn
       outline
@@ -30,7 +30,7 @@
       color="grey-7"
       no-caps
       class="text-font border"
-      label="Outline"
+      label="Psychiatrist"
     />
     <q-btn
       outline
@@ -38,7 +38,7 @@
       color="grey-7"
       no-caps
       class="text-font border"
-      label="Outline"
+      label="Obstetricians"
     />
     <q-btn
       outline
@@ -46,7 +46,7 @@
       color="grey-7"
       no-caps
       class="text-font border"
-      label="Outline"
+      label="Neurologists"
     />
     <q-btn
       outline
@@ -54,7 +54,7 @@
       color="grey-7"
       no-caps
       class="text-font border"
-      label="Outline"
+      label="Radiologists"
     />
     <q-btn
       outline
@@ -62,7 +62,7 @@
       color="grey-7"
       no-caps
       class="text-font border"
-      label="Outline"
+      label="Dentists"
     />
     <q-btn
       outline
@@ -70,7 +70,7 @@
       color="grey-7"
       no-caps
       class="text-font border"
-      label="Outline"
+      label="Pediatricians "
     />
     <q-btn
       outline
@@ -78,7 +78,7 @@
       color="grey-7"
       no-caps
       class="text-font border"
-      label="Outline"
+      label="Cardiologists "
     />
   </div>
 </template>
