@@ -14,7 +14,7 @@
       color="grey-7"
       no-caps
       class="text-font border"
-      label="Outline"
+      label="Psychologist"
     />
     <q-btn
       outline
@@ -22,7 +22,7 @@
       color="grey-7"
       no-caps
       class="text-font border"
-      label="Outline"
+      label="Dentist"
     />
     <q-btn
       outline
