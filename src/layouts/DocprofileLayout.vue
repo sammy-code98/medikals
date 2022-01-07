@@ -11,7 +11,7 @@
     <!-- footer menu -->
     <q-footer class="bg-white" bordered>
       <q-card flat square class="q-pa-md">
-        <q-btn color="primary" label="Make an Appointment" class="full-width  text-font text-subtitle1" dense no-caps  />
+        <q-btn color="primary" label="Make an Appointment" class="full-width  text-font text-subtitle1~" dense no-caps  />
       </q-card>
     </q-footer>
 
