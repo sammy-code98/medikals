@@ -28,7 +28,11 @@ const routes = [
     component: () => import("src/layouts/DocprofileLayout.vue"),
     children: [{ path:"", component: () => import("pages/DocProfile.vue")}]
   },
-
+{
+  path:"/search-result",
+  component: () => import("src/layouts/SearchLayout.vue"),
+  children: [{path:"", component: () => import("pages/SearchResult.vue")}]
+},
   // Always leave this as last one,
   // but you can also remove it
   {
