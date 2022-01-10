@@ -1,10 +1,16 @@
 <template>
-  <div class="q-pa-md"></div>
+  <div class="q-mt-sm">
+      <EventCard/>
+  </div>
 </template>
 <script>
+import EventCard from "../components/EventCard.vue"
 export default {
+    components: {EventCard},
   setup() {
-    return {};
+    return {
+        EventCard,
+    };
   },
 };
 </script>
