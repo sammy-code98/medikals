@@ -1,15 +1,38 @@
 <template>
   <div class="q-mt-sm">
-      <EventCard/>
+    <EventCard v-for="event in eventData" :key="event.name" v-bind="event" />
   </div>
 </template>
 <script>
-import EventCard from "../components/EventCard.vue"
+const eventData = [
+  {
+    name: "Dr. Emma Uchewa",
+    field: "Dentist",
+    date: "Mon,Jan 02, 22 01:23pm-5:00pm",
+  },
+  {
+    name: "Dr. Emma Uchewa",
+    field: "Dentist",
+    date: "Mon,Jan 02, 22 01:23pm-5:00pm",
+  },
+  {
+    name: "Dr. Emma Uchewa",
+    field: "Dentist",
+    date: "Mon,Jan 02, 22 01:23pm-5:00pm",
+  },
+  {
+    name: "Dr. Emma Uchewa",
+    field: "Dentist",
+    date: "Mon,Jan 02, 22 01:23pm-5:00pm",
+  },
+];
+import EventCard from "../components/EventCard.vue";
 export default {
-    components: {EventCard},
+  components: { EventCard },
   setup() {
     return {
-        EventCard,
+      EventCard,
+      eventData,
     };
   },
 };

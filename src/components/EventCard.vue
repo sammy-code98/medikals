@@ -11,10 +11,10 @@
         <q-card-section>
           <div class="row justify-between no-wrap">
             <div class="col-auto q-mt-md">
-              <div class="text-h6  text-font text-white">
-                Dr. Emmanuel Uchewa
+              <div class="text-h6 text-font text-white">
+                {{ name }}
               </div>
-              <div class="text-caption text-font text-white">Dentist</div>
+              <div class="text-caption text-font text-white">{{ field }}</div>
             </div>
 
             <div class="q-mx-md">
@@ -36,14 +36,24 @@
             style="color: #ccc; font-size: 2em"
             class="q-ma-md"
           />
-          <span class="text-font text-subtitle1 text-white"
-            >Mon,Jan 02, 22 01:23pm-5:00pm</span
-          >
+          <span class="text-font text-subtitle1 text-white">{{ date }}</span>
         </div>
       </q-card-section>
     </q-card>
   </div>
 </template>
+<script>
+export default {
+  props: {
+    name: { type: String, required: true },
+    field: { type: String, required: true },
+    date: { type: String, required: true },
+  },
+  setup() {
+    return {};
+  },
+};
+</script>
 <style lang="scss" scoped>
 .border {
   border-radius: 8px;
