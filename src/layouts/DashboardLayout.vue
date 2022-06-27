@@ -37,7 +37,7 @@
             exact
           />
 
-          <q-route-tab icon="mdi-account-outline" exact />
+          <q-route-tab icon="mdi-account-outline" exact to="/profile" />
         </q-tabs>
       </q-card>
     </q-footer>

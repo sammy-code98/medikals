@@ -66,21 +66,30 @@
         </q-form>
       </q-card>
 
-      <div class="text-center text-h6 text-font text-grey-7 q-mt-lg">Or</div>
+      <div class="text-center text-h6 text-font text-grey-7 q-mt-lg ">Or</div>
 
-      <div class="q-mt-lg">
+      <div class="q-mt-sm q-mb-md">
         <q-btn
-          class="full-width q-pa-md"
+          class="full-width q-pa-md q-ma-sm"
           flat
           no-caps
           style="background: #e9e8e8; color: #000"
           icon="mdi-google"
           label="Sign Up with Google"
         />
+        <q-btn
+          class="full-width q-pa-md q-ma-sm"
+          flat
+          no-caps
+          style="background: #e9e8e8; color: #000"
+          icon="mdi-facebook"
+          label="Sign Up with Facebook"
+        />
       </div>
 
       <div class="q-mt-sm text-center text-font text-subtitle2">
-        Already have an account? <span class="text-primary">Sign In</span>
+        Already have an account?
+        <router-link to="/account/signin"><span class="text-primary">Sign In</span> </router-link>
       </div>
     </div>
   </div>
@@ -104,3 +113,4 @@ export default {
   },
 };
 </script>
+

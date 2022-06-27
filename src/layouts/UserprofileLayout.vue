@@ -2,13 +2,16 @@
   <q-layout view="lHh Lpr lFf">
     <q-header class="bg-white">
       <q-toolbar>
-        <q-btn flat round dense icon="mdi-view-grid-outline" color="black" />
+        <q-btn
+          flat
+          round
+          dense
+          icon="mdi-less-than"
+          color="black"
+          to="/dashboard"
+        />
         <q-space />
-        <div class="text-accent text-h6 text-font">Appointments</div>
-        <q-space />
-        <q-avatar rounded class="q-mx-sm">
-          <img src="https://cdn.quasar.dev/img/avatar.png" />
-        </q-avatar>
+        <q-btn flat round dense icon="mdi-dots-vertical" color="black" />
       </q-toolbar>
     </q-header>
 

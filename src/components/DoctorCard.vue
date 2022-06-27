@@ -58,7 +58,4 @@ export default {
 .border {
   border-radius: 8px;
 }
-a {
-  text-decoration: none;
-}
 </style>

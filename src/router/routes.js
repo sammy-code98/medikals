@@ -26,18 +26,23 @@ const routes = [
   {
     path: "/doctor-profile",
     component: () => import("src/layouts/DocprofileLayout.vue"),
-    children: [{ path:"", component: () => import("pages/DocProfile.vue")}]
+    children: [{ path: "", component: () => import("pages/DocProfile.vue") }],
   },
-{
-  path:"/search-result",
-  component: () => import("src/layouts/SearchLayout.vue"),
-  children: [{path:"", component: () => import("pages/SearchResult.vue")}]
-},
-{
-  path:"/appointments",
-  component: () => import("src/layouts/AppointmentLayout.vue"),
-  children: [{ path:"", component: () => import("pages/Appointment.vue")}]
-},
+  {
+    path: "/search-result",
+    component: () => import("src/layouts/SearchLayout.vue"),
+    children: [{ path: "", component: () => import("pages/SearchResult.vue") }],
+  },
+  {
+    path: "/appointments",
+    component: () => import("src/layouts/AppointmentLayout.vue"),
+    children: [{ path: "", component: () => import("pages/Appointment.vue") }],
+  },
+  {
+    path: "/profile",
+    component: () => import("src/layouts/UserprofileLayout.vue"),
+    children: [{ path: "", component: () => import("pages/UserProfile.vue") }],
+  },
   // Always leave this as last one,
   // but you can also remove it
   {
