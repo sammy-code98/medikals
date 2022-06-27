@@ -11,6 +11,9 @@
           to="/dashboard"
         />
         <q-space />
+        <span class="text-accent text-h6 text-font">{{ $route.name }}</span>
+        <q-space />
+
         <q-btn flat round dense icon="mdi-dots-vertical" color="black" />
       </q-toolbar>
     </q-header>
@@ -21,7 +24,7 @@
         <q-tabs class="text-primary">
           <q-route-tab icon="mdi-home" exact to="/dashboard" />
 
-          <q-route-tab icon="mdi-chat-processing-outline" exact />
+          <q-route-tab icon="mdi-chat-processing-outline" exact to="/chat"/>
 
           <q-route-tab
             icon="mdi-calendar-month-outline"

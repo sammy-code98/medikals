@@ -4,7 +4,7 @@
       <q-toolbar>
         <q-btn flat round dense icon="mdi-view-grid-outline" color="black" />
         <q-space />
-        <div class="text-accent text-h6 text-font">Appointments</div>
+        <span class="text-accent text-h6 text-font">{{ $route.name }}</span>
         <q-space />
         <q-avatar rounded class="q-mx-sm">
           <img src="https://cdn.quasar.dev/img/avatar.png" />
@@ -18,7 +18,7 @@
         <q-tabs class="text-primary">
           <q-route-tab icon="mdi-home" exact to="/dashboard" />
 
-          <q-route-tab icon="mdi-chat-processing-outline" exact />
+          <q-route-tab icon="mdi-chat-processing-outline" exact to="/chat" />
 
           <q-route-tab
             icon="mdi-calendar-month-outline"

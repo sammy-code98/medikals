@@ -21,13 +21,25 @@
     <!-- footer menu -->
     <q-footer class="bg-white" bordered>
       <q-card flat square class="q-pa-md">
-        <q-btn
-          color="primary"
-          label="Make an Appointment"
-          class="full-width text-font text-subtitle1~"
+        <q-input
+          outlined
+          rounded
           dense
-          no-caps
-        />
+          autogrow
+          v-model="newText"
+          placeholder="Type your message"
+        >
+          <template v-slot:after>
+            <q-btn
+              round
+              dense
+              flat
+              icon="send"
+              color="primary"
+              :disable="!newText"
+            />
+          </template>
+        </q-input>
       </q-card>
     </q-footer>
 
@@ -38,10 +50,14 @@
 </template>
 
 <script>
+import { ref } from "vue";
 export default {
   name: "MainLayout",
   setup() {
-    return {};
+    const newText = ref("");
+    return {
+      newText,
+    };
   },
 };
 </script>
