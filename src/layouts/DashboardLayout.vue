@@ -12,7 +12,9 @@
             class="text-primary"
             style="font-size: 2em"
           />
-          <span class="q-ma-sm text-accent text-subtitle1 text-font">Lagos, Nigeria</span>
+          <span class="q-ma-sm text-accent text-subtitle1 text-font"
+            >Lagos, Nigeria</span
+          >
         </div>
         <q-space />
         <q-avatar rounded class="q-mx-sm">
@@ -24,26 +26,18 @@
     <!-- footer menu -->
     <q-footer class="bg-white" bordered>
       <q-card flat square>
-        <q-tabs indicator-color="transparent" class="text-black">
-          <q-route-tab icon="mdi-home" to="/dashboard" active-class="text-black" exact />
-          <q-route-tab
-            icon="mdi-chat-processing-outline"
-            active-class="text-black"
-            exact
-          />
+        <q-tabs class="text-primary">
+          <q-route-tab icon="mdi-home" exact to="/dashboard" />
+
+          <q-route-tab icon="mdi-chat-processing-outline" exact />
 
           <q-route-tab
             icon="mdi-calendar-month-outline"
             to="/appointments"
-            active-class="text-black"
             exact
           />
 
-          <q-route-tab
-            icon="mdi-account-outline"
-            active-class="text-black"
-            exact
-          />
+          <q-route-tab icon="mdi-account-outline" exact />
         </q-tabs>
       </q-card>
     </q-footer>
