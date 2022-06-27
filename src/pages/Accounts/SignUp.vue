@@ -4,17 +4,7 @@
       <div class="text-center text-h4 text-font q-pb-md text-grey-7">
         Create an account
       </div>
-      <div class="q-mt-lg">
-        <q-btn
-          class="full-width q-pa-md"
-          flat
-          no-caps
-          style="background: #e9e8e8; color: #000"
-          icon="mdi-google"
-          label="Sign Up with Google"
-        />
-      </div>
-      <div class="text-center text-h6 text-font text-grey-7 q-mt-lg">Or</div>
+
       <q-card class="q-mt-xl" flat>
         <q-form class="q-gutter-md">
           <q-input
@@ -75,6 +65,20 @@
           </div>
         </q-form>
       </q-card>
+
+      <div class="text-center text-h6 text-font text-grey-7 q-mt-lg">Or</div>
+
+      <div class="q-mt-lg">
+        <q-btn
+          class="full-width q-pa-md"
+          flat
+          no-caps
+          style="background: #e9e8e8; color: #000"
+          icon="mdi-google"
+          label="Sign Up with Google"
+        />
+      </div>
+
       <div class="q-mt-sm text-center text-font text-subtitle2">
         Already have an account? <span class="text-primary">Sign In</span>
       </div>
