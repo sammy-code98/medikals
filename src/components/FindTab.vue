@@ -1,5 +1,5 @@
 <template>
-  <div class="menu-slide  q-px-md q-gutter-md">
+  <div class="menu-slide q-px-md q-gutter-md">
     <q-btn
       outline
       flat
@@ -83,14 +83,9 @@
   </div>
 </template>
 <script>
-import { ref } from "vue";
 export default {
   setup() {
-    let gender = ref("");
-    return {
-      tab: ref("clothes"),
-      gender,
-    };
+    return {};
   },
 };
 </script>
