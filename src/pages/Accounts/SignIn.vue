@@ -47,7 +47,10 @@
         </q-form>
       </q-card>
       <div class="q-mt-sm text-center text-font text-subtitle2">
-        Don't have an account yet? <span class="text-primary">Sign Up</span>
+        Don't have an account yet?
+        <router-link to="/account/signup">
+          <span class="text-primary">Sign Up</span>
+        </router-link>
       </div>
     </div>
   </div>
