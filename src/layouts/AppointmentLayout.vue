@@ -13,15 +13,12 @@
     </q-header>
 
     <!-- footer menu -->
-   <q-footer class="bg-white" bordered>
+    <q-footer class="bg-white" bordered>
       <q-card flat square>
-        <q-tabs  class="text-primary">
-          <q-route-tab icon="mdi-home" exact to="/dashboard"   />
+        <q-tabs class="text-primary">
+          <q-route-tab icon="mdi-home" exact to="/dashboard" />
 
-          <q-route-tab
-            icon="mdi-chat-processing-outline"
-            exact
-          />
+          <q-route-tab icon="mdi-chat-processing-outline" exact />
 
           <q-route-tab
             icon="mdi-calendar-month-outline"
@@ -29,10 +26,7 @@
             exact
           />
 
-          <q-route-tab
-            icon="mdi-account-outline"
-            exact
-          />
+          <q-route-tab icon="mdi-account-outline" exact to="/profile" />
         </q-tabs>
       </q-card>
     </q-footer>
