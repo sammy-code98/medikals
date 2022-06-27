@@ -20,20 +20,14 @@
 
     <!-- footer menu -->
     <q-footer class="bg-white" bordered>
-      <q-card flat square>
-        <q-tabs class="text-primary">
-          <q-route-tab icon="mdi-home" exact to="/dashboard" />
-
-          <q-route-tab icon="mdi-chat-processing-outline" exact to="/chat"/>
-
-          <q-route-tab
-            icon="mdi-calendar-month-outline"
-            to="/appointments"
-            exact
-          />
-
-          <q-route-tab icon="mdi-account-outline" exact to="/profile" />
-        </q-tabs>
+      <q-card flat square class="q-pa-md">
+        <q-btn
+          color="primary"
+          label="Make an Appointment"
+          class="full-width text-font text-subtitle1~"
+          dense
+          no-caps
+        />
       </q-card>
     </q-footer>
 

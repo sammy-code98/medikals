@@ -83,6 +83,17 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/chat",
+    component: () => import("src/layouts/ChatLayout.vue"),
+    children: [
+      {
+        path: "",
+        component: () => import("pages/Chat.vue"),
+        name: "Medics  Messenger",
+      },
+    ],
+  },
   // Always leave this as last one,
   // but you can also remove it
   {
