@@ -2,8 +2,18 @@
   <q-layout view="lHh Lpr lFf">
     <q-header class="bg-white">
       <q-toolbar>
-        <q-btn flat round dense icon="mdi-less-than" color="black" to="/dashboard" />
+        <q-btn
+          flat
+          round
+          dense
+          icon="mdi-less-than"
+          color="black"
+          to="/dashboard"
+        />
         <q-space />
+        <span class="text-accent text-h6 text-font">{{ $route.name }}</span>
+        <q-space />
+
         <q-btn flat round dense icon="mdi-dots-vertical" color="black" />
       </q-toolbar>
     </q-header>

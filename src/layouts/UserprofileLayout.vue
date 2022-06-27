@@ -11,6 +11,9 @@
           to="/dashboard"
         />
         <q-space />
+        <span class="text-accent text-h6 text-font">{{ $route.name }}</span>
+        <q-space />
+
         <q-btn flat round dense icon="mdi-dots-vertical" color="black" />
       </q-toolbar>
     </q-header>
