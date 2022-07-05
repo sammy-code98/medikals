@@ -21,7 +21,7 @@
       </div>
     </div>
     <FindTab />
-    <DoctorCard />
+    <DocCard/>
   </div>
 </template>
 <script>
@@ -33,13 +33,13 @@ const eventData = {
 import SearchInput from "../components/SearchInput.vue";
 import EventCard from "../components/EventCard.vue";
 import FindTab from "../components/FindTab.vue";
-import DoctorCard from "../components/DoctorCard.vue";
+import DocCard from "./Doctors/_Index.vue"
 export default {
   components: {
     SearchInput,
     EventCard,
     FindTab,
-    DoctorCard,
+    DocCard
   },
   setup() {
     return {
