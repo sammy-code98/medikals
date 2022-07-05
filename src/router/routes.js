@@ -39,17 +39,27 @@ const routes = [
       },
     ],
   },
-  // {
-  //   path: "/doctor-profile",
-  //   component: () => import("src/layouts/DocprofileLayout.vue"),
-  //   children: [
-  //     {
-  //       path: "",
-  //       component: () => import("src/pages/Doctors/DocProfile.vue"),
-  //       name: "Doctor's Profile",
-  //     },
-  //   ],
-  // },
+  {
+    path: "/doctor/:speciality",
+    component: () => import("src/layouts/DashboardLayout.vue"),
+    children: [
+      {
+        path: "/doctor/:speciality",
+        component: () => import("pages/Doctors/_Index.vue"),
+      },
+    ],
+  },
+  {
+    path: "/doctor/:speciality/:doc-profile",
+    component: () => import("src/layouts/DocprofileLayout.vue"),
+    children: [
+      {
+        path: "/doctor/:speciality/:doc-profile",
+        component: () => import("pages/Doctors/_DocProfile.vue"),
+        name: "Doctor's Profile",
+      },
+    ],
+  },
   {
     path: "/search-result",
     component: () => import("src/layouts/SearchLayout.vue"),
