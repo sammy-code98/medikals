@@ -22,7 +22,7 @@
     <q-footer class="bg-white" bordered>
       <q-card flat square class="q-pa-md">
         <q-btn
-          color="primary"
+          color="accent"
           label="Make an Appointment"
           class="full-width text-font text-subtitle1~"
           dense

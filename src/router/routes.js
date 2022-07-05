@@ -45,7 +45,7 @@ const routes = [
   },
 
   {
-    path: "/doctor/:speciality/:doc-profile",
+    path: "/doctor/:speciality/:profile",
     component: () => import("src/layouts/DocprofileLayout.vue"),
     children: [
       {
