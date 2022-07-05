@@ -1,6 +1,6 @@
 <template>
   <div class="q-pa-md">
-    <q-card class="bg-accent border" flat bordered>
+    <q-card class="border" flat bordered>
       <q-card-section horizontal>
         <q-card-section class="col-3 flex flex-center">
           <q-img
@@ -11,17 +11,17 @@
         <q-card-section>
           <div class="row justify-between no-wrap">
             <div class="col-auto q-mt-md">
-              <div class="text-h6 text-font text-white">
+              <div class="text-h6 text-font text-accent">
                 {{ name }}
               </div>
-              <div class="text-caption text-font text-white">{{ field }}</div>
+              <div class="text-subtitle2 text-font text-accent">{{ field }}</div>
             </div>
 
             <div class="q-mx-md">
               <q-btn
                 color="white"
                 dense
-                text-color="primary"
+                text-color="accent"
                 round
                 icon="mdi-video-outline"
               />
@@ -30,7 +30,7 @@
         </q-card-section>
       </q-card-section>
       <q-card-section>
-        <div class="bg-primary border">
+        <div class="bg-accent border">
           <q-icon
             name="mdi-clock-outline"
             style="color: #ccc; font-size: 2em"
