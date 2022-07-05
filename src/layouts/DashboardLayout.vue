@@ -43,19 +43,50 @@
     </q-footer>
 
     <q-page-container>
+      <Search class="q-mt-sm" />
+      <div class="row justify-between q-pa-md">
+        <div class="text-accent text-font text-h6 text-weight-thin">
+          Upcoming Events
+        </div>
+        <div
+          class="text-primary text-font text-weight-bold cursor-pointer q-mt-sm"
+        >
+          See all
+        </div>
+      </div>
+      <EventCard v-bind="eventData" />
+
+      <div class="row justify-between q-pa-md">
+        <div class="text-accent text-font text-h6 text-weight-thin q-mt-md">
+          Let's find you a doctor
+        </div>
+        <div class="q-mt-sm">
+          <q-btn flat color="primary" round icon="mdi-tune-variant" />
+        </div>
+      </div>
+      <FindTab />
       <router-view />
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
+import Search from "../components/SearchInput.vue";
 import location from "../components/LocationBtn.vue";
+import EventCard from "../components/EventCard.vue";
+import FindTab from "../components/FindTab.vue";
+
+const eventData = {
+  name: "Dr. Samuel Ugo Uzor",
+  field: "Dentist",
+  date: "Mon,Jan 02, 22 01:23pm-5:00pm",
+};
 export default {
   name: "MainLayout",
-  components: { location },
+  components: { location, Search, EventCard, FindTab },
   setup() {
     return {
-      location,
+      eventData,
     };
   },
 };
