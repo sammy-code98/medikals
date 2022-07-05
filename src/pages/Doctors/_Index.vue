@@ -1,10 +1,10 @@
 <template>
   <q-page>
-    <div class="text-center text-h6 mt-9">hello</div>
+    <div class="text-center text-h6 q-mt-md q-pb-sm">hello</div>
     <div v-for="appoint in appointment" :key="appoint.name">
-      <router-link to="/doctor-profile">
+      <!-- <router-link to="/doctor-profile"> -->
         <DoctorCard v-bind="appoint" />
-      </router-link>
+      <!-- </router-link> -->
     </div>
   </q-page>
 </template>

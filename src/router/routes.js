@@ -39,17 +39,17 @@ const routes = [
       },
     ],
   },
-  {
-    path: "/doctor-profile",
-    component: () => import("src/layouts/DocprofileLayout.vue"),
-    children: [
-      {
-        path: "",
-        component: () => import("pages/DocProfile.vue"),
-        name: "Doctor's Profile",
-      },
-    ],
-  },
+  // {
+  //   path: "/doctor-profile",
+  //   component: () => import("src/layouts/DocprofileLayout.vue"),
+  //   children: [
+  //     {
+  //       path: "",
+  //       component: () => import("src/pages/Doctors/DocProfile.vue"),
+  //       name: "Doctor's Profile",
+  //     },
+  //   ],
+  // },
   {
     path: "/search-result",
     component: () => import("src/layouts/SearchLayout.vue"),
