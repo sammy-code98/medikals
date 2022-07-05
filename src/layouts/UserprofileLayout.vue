@@ -21,10 +21,10 @@
     <!-- footer menu -->
     <q-footer class="bg-white" bordered>
       <q-card flat square>
-        <q-tabs class="text-primary">
+        <q-tabs class="text-accent">
           <q-route-tab icon="mdi-home" exact to="/dashboard" />
 
-          <q-route-tab icon="mdi-chat-processing-outline" exact to="/chat"/>
+          <q-route-tab icon="mdi-chat-processing-outline" exact to="/chat" />
 
           <q-route-tab
             icon="mdi-calendar-month-outline"

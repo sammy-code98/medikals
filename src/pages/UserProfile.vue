@@ -17,7 +17,7 @@
   </div>
   <div class="q-mt-sm">
     <div class="text-center text-font text-h6">John Doe</div>
-    <div class="text-center text-font text-primary text-subtitle1">
+    <div class="text-center text-font text-accent text-subtitle1">
       JohnDoe@gmail.com
     </div>
   </div>
@@ -30,7 +30,7 @@
     >
       <q-item>
         <q-item-section avatar>
-          <q-btn round flat color="primary" :icon="profile.icon" />
+          <q-btn round flat color="accent" :icon="profile.icon" />
         </q-item-section>
 
         <q-item-section>
@@ -39,7 +39,7 @@
           }}</q-item-label>
         </q-item-section>
         <q-space />
-        <q-btn round flat color="primary" icon="mdi-chevron-right" />
+        <q-btn round flat color="accent" icon="mdi-chevron-right" />
       </q-item>
     </q-card>
   </div>

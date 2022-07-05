@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <div class="text-center text-h6 q-mt-md q-pb-sm">hello</div>
+    <div class="text-center text-h6 q-mt-md q-pb-sm">spec title</div>
     <div v-for="appoint in appointment" :key="appoint.name">
       <router-link :to="`/doctor/${appoint.field}/${appoint.name}`">
         <DoctorCard v-bind="appoint" />
