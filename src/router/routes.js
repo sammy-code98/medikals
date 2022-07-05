@@ -49,7 +49,7 @@ const routes = [
     component: () => import("src/layouts/DocprofileLayout.vue"),
     children: [
       {
-        path: "/doctor/:speciality/:doc-profile",
+        path: "/doctor/:speciality/:profile",
         component: () => import("pages/Doctors/_DocProfile.vue"),
         name: "Doctor's Profile",
       },
