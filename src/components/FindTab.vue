@@ -1,91 +1,39 @@
 <template>
-  <div class="menu-slide q-px-md q-gutter-md">
-    <q-btn
-      outline
-      flat
-      color="accent"
-      no-caps
-      class="text-font border shadow-1"
-      label="Gynecologist"
-    />
-    <q-btn
-      outline
-      unelevated
-      color="grey-7"
-      no-caps
-      class="text-font border"
-      label="Psychologist"
-    />
-    <q-btn
-      outline
-      unelevated
-      color="grey-7"
-      no-caps
-      class="text-font border"
-      label="Anesthesiologists"
-    />
-    <q-btn
-      outline
-      unelevated
-      color="grey-7"
-      no-caps
-      class="text-font border"
-      label="Psychiatrist"
-    />
-    <q-btn
-      outline
-      unelevated
-      color="grey-7"
-      no-caps
-      class="text-font border"
-      label="Obstetricians"
-    />
-    <q-btn
-      outline
-      unelevated
-      color="grey-7"
-      no-caps
-      class="text-font border"
-      label="Neurologists"
-    />
-    <q-btn
-      outline
-      unelevated
-      color="grey-7"
-      no-caps
-      class="text-font border"
-      label="Radiologists"
-    />
-    <q-btn
-      outline
-      unelevated
-      color="grey-7"
-      no-caps
-      class="text-font border"
-      label="Dentists"
-    />
-    <q-btn
-      outline
-      unelevated
-      color="grey-7"
-      no-caps
-      class="text-font border"
-      label="Pediatricians "
-    />
-    <q-btn
-      outline
-      unelevated
-      color="grey-7"
-      no-caps
-      class="text-font border"
-      label="Cardiologists "
-    />
+  <div class="menu-slide">
+    <div
+      class="q-px-sm q-gutter-sm"
+      v-for="(spec, indx) in speciality"
+      :key="indx"
+    >
+      <q-btn
+        outline
+        flat
+        color="accent"
+        no-caps
+        class="text-font border shadow-1"
+      >{{spec.title}}</q-btn>
+    </div>
   </div>
 </template>
 <script>
+const speciality = [
+  { title: "Gynecologist" },
+  { title: "Cardiologists" },
+  { title: "Pediatricians " },
+  { title: "Dentists" },
+  { title: "Radiologists" },
+  { title: "Neurologists" },
+  { title: "Obstetricians" },
+  { title: "Psychiatrist" },
+  { title: "Anesthesiologists" },
+  { title: "Psychologist" },
+  { title: "Psychiatrist" },
+];
 export default {
   setup() {
-    return {};
+    return {
+      speciality,
+    };
   },
 };
 </script>
