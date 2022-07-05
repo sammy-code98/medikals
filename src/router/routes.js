@@ -37,18 +37,13 @@ const routes = [
         component: () => import("pages/Dashboard.vue"),
         name: "Dashboard",
       },
-    ],
-  },
-  {
-    path: "/doctor/:speciality",
-    component: () => import("src/layouts/DashboardLayout.vue"),
-    children: [
       {
         path: "/doctor/:speciality",
         component: () => import("pages/Doctors/_Index.vue"),
       },
     ],
   },
+
   {
     path: "/doctor/:speciality/:doc-profile",
     component: () => import("src/layouts/DocprofileLayout.vue"),

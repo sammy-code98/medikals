@@ -11,7 +11,9 @@
         color="accent"
         no-caps
         class="text-font border shadow-1"
-      >{{spec.title}}</q-btn>
+        :to="`/doctor/${spec.title}`"
+        >{{ spec.title }}</q-btn
+      >
     </div>
   </div>
 </template>
