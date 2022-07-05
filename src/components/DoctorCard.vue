@@ -1,5 +1,5 @@
 <template>
-  <div class="q-pa-md q-mt-md">
+  <div class="q-px-md q-mt-md">
     <q-card class="bg-white border shadow-8 q-mb-md" flat bordered>
       <q-card-section horizontal>
         <q-card-section class="col-3 flex flex-center">
