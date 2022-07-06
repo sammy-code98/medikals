@@ -4,6 +4,7 @@
       class="text-center text-subtitle2 text-font text-grey-7 q-mt-md q-pb-sm"
     >
       Select a Doctor of your choice from our team of
+      <br />
       <span class="text-accent text-weight-bold">{{ specTitle }}</span>
     </div>
     <div v-for="appoint in appointment" :key="appoint.name">
@@ -18,10 +19,10 @@ import { useRoute } from "vue-router";
 import { ref, onMounted, watchEffect } from "vue";
 import DoctorCard from "../../components/DoctorCard.vue";
 const appointment = [
-  { name: "Dr. Emma Uchewa", field: "Dentist" },
-  { name: "Dr. Daniel Uchewa", field: "Therapist" },
-  { name: "Dr. Emma Oko", field: "Dentist" },
-  { name: "Dr. Emmam Uchewa", field: "Optometrist" },
+  { name: "Dr. Emma Uchewa" },
+  { name: "Dr. Daniel Uchewa" },
+  { name: "Dr. Emma Oko" },
+  { name: "Dr. Emmam Uchewa" },
 ];
 export default {
   components: { DoctorCard },

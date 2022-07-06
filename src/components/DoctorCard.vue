@@ -27,15 +27,30 @@
   </div>
 </template>
 <script>
-import { ref } from "vue";
+import {useRoute} from 'vue-router';
+import { ref, onMounted, watchEffect } from "vue";
 export default {
   props: {
     name: { type: String, required: true },
-    field: { type: String, required: true },
+    // field: { type: String, required: true },
   },
   setup() {
+    const route = useRoute()
+    let field = ref("")
+
+    function getField() {
+      field.value = route.params.speciality
+    }
+
+
+    onMounted(()=>{
+      getField()
+    })
+
+    watchEffect(() => getField())
     return {
       ratingModel: ref(5),
+      field
     };
   },
 };
