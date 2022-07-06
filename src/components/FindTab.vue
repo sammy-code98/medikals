@@ -1,5 +1,5 @@
 <template>
-  <div class="menu-slide">
+  <div class="menu-slide q-pa-sm">
     <div
       class="q-px-sm q-gutter-sm"
       v-for="(spec, indx) in speciality"

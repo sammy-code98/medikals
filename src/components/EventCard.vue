@@ -14,10 +14,12 @@
               <div class="text-h6 text-font text-accent">
                 {{ name }}
               </div>
-              <div class="text-subtitle2 text-font text-accent">{{ field }}</div>
+              <div class="text-subtitle2 text-font text-accent">
+                {{ field }}
+              </div>
             </div>
 
-            <div class="q-mx-md">
+            <div class="q-mx-xs">
               <q-btn
                 color="white"
                 dense
@@ -34,7 +36,7 @@
           <q-icon
             name="mdi-clock-outline"
             style="color: #ccc; font-size: 2em"
-            class="q-ma-md"
+            class="q-ma-sm"
           />
           <span class="text-font text-subtitle1 text-white">{{ date }}</span>
         </div>
