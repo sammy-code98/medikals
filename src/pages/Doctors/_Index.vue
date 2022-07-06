@@ -20,9 +20,9 @@ import { ref, onMounted, watchEffect } from "vue";
 import DoctorCard from "../../components/DoctorCard.vue";
 const appointment = [
   { name: "Dr. Emma Uchewa" },
-  { name: "Dr. Daniel Uchewa" },
-  { name: "Dr. Emma Oko" },
-  { name: "Dr. Emmam Uchewa" },
+  { name: "Dr. Nze Chimdi" },
+  { name: "Dr. Peculiar Chidinma" },
+  { name: "Dr. George I" },
 ];
 export default {
   components: { DoctorCard },
