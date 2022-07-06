@@ -48,11 +48,13 @@
         <div class="text-accent text-font text-h6 text-weight-thin">
           Upcoming Events
         </div>
-        <div
-          class="text-primary text-font text-weight-bold cursor-pointer q-mt-sm"
-        >
-          See all
-        </div>
+        <router-link to="/appointments">
+          <div
+            class="text-primary text-font text-weight-bold cursor-pointer q-mt-sm"
+          >
+            See all
+          </div>
+        </router-link>
       </div>
       <EventCard v-bind="eventData" />
 
