@@ -1,7 +1,10 @@
 <template>
   <q-page>
-    <div class="text-center text-subtitle2 q-mt-md q-pb-sm">
-      {{ specTitle }}
+    <div
+      class="text-center text-subtitle2 text-font text-grey-7 q-mt-md q-pb-sm"
+    >
+      Select a Doctor of your choice from our team of
+      <span class="text-accent text-weight-bold">{{ specTitle }}</span>
     </div>
     <div v-for="appoint in appointment" :key="appoint.name">
       <router-link :to="`/doctor/${appoint.field}/${appoint.name}`">
@@ -26,6 +29,7 @@ export default {
     const route = useRoute();
     let specTitle = ref("");
 
+    // get speciality params
     function getSpecTitle() {
       specTitle.value = route.params.speciality;
     }
@@ -34,6 +38,7 @@ export default {
       getSpecTitle();
     });
 
+    // watch for changes
     watchEffect(() => getSpecTitle());
 
     return {
