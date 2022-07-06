@@ -1,6 +1,8 @@
 <template>
   <q-page>
-    <div class="text-center text-h6 q-mt-md q-pb-sm">spec title</div>
+    <div class="text-center text-subtitle2 q-mt-md q-pb-sm">
+      {{ specTitle }}
+    </div>
     <div v-for="appoint in appointment" :key="appoint.name">
       <router-link :to="`/doctor/${appoint.field}/${appoint.name}`">
         <DoctorCard v-bind="appoint" />
@@ -9,6 +11,8 @@
   </q-page>
 </template>
 <script>
+import { useRoute } from "vue-router";
+import { ref, onMounted, watchEffect } from "vue";
 import DoctorCard from "../../components/DoctorCard.vue";
 const appointment = [
   { name: "Dr. Emma Uchewa", field: "Dentist" },
@@ -19,8 +23,22 @@ const appointment = [
 export default {
   components: { DoctorCard },
   setup() {
+    const route = useRoute();
+    let specTitle = ref("");
+
+    function getSpecTitle() {
+      specTitle.value = route.params.speciality;
+    }
+
+    onMounted(() => {
+      getSpecTitle();
+    });
+
+    watchEffect(() => getSpecTitle());
+
     return {
       appointment,
+      specTitle,
     };
   },
 };
