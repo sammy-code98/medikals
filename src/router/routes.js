@@ -30,10 +30,11 @@ const routes = [
   },
   {
     path: "/dashboard",
+    redirect: "/doctor/Gynecologist",
     component: () => import("src/layouts/DashboardLayout.vue"),
     children: [
       {
-        path: "",
+        path: "/doctor/:speciality",
         component: () => import("pages/Dashboard.vue"),
         name: "Dashboard",
       },
