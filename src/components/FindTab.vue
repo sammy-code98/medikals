@@ -1,16 +1,22 @@
 <template>
-  <div class="menu-slide">
+  <div class="menu-slide q-pa-sm">
     <div
       class="q-px-sm q-gutter-sm"
-      v-for="(spec, indx) in speciality"
+      v-for="(spec, indx) in specialities"
       :key="indx"
     >
+      <!-- color="accent" -->
+
       <q-btn
-        outline
+        :color="getCurrentSpec(spec.title) ? 'accent' : 'grey-7'"
         flat
-        color="accent"
         no-caps
-        class="text-font border shadow-1"
+        :class="
+          getCurrentSpec(spec.title)
+            ? 'text-weight-bold border shadow-2'
+            : 'border'
+        "
+        class="text-font"
         :to="`/doctor/${spec.title}`"
         >{{ spec.title }}</q-btn
       >
@@ -18,7 +24,8 @@
   </div>
 </template>
 <script>
-const speciality = [
+import { useRoute } from "vue-router";
+const specialities = [
   { title: "Gynecologist" },
   { title: "Cardiologists" },
   { title: "Pediatricians " },
@@ -33,8 +40,20 @@ const speciality = [
 ];
 export default {
   setup() {
+    const route = useRoute();
+
+    function getCurrentSpec(spec) {
+      if (route.params.speciality && specialities) {
+        if (spec == route.params.speciality) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    }
     return {
-      speciality,
+      specialities,
+      getCurrentSpec,
     };
   },
 };
