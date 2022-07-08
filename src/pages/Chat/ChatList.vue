@@ -6,7 +6,7 @@
       Your Messages
     </div>
     <div v-for="message in messages" :key="message.name">
-      <router-link to="/chat">
+      <router-link :to="`/chat/${message.name}`">
         <q-list bordered padding>
           <q-item clickable v-ripple>
             <q-item-section top avatar>
@@ -31,6 +31,7 @@
 </template>
 
 <script>
+
 const messages = [
   {
     name: "Dr. Emma Uchewa",
@@ -70,6 +71,7 @@ const messages = [
 ];
 export default {
   setup() {
+
     return {
       messages,
     };

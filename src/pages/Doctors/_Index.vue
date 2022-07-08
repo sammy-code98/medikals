@@ -8,7 +8,7 @@
       <span class="text-accent text-weight-bold">{{ specTitle }}</span>
     </div>
     <div v-for="appoint in appointment" :key="appoint.name">
-      <router-link :to="`/doctor/${appoint.field}/${appoint.name}`">
+      <router-link :to="`/doctor/${specTitle}/${appoint.name}`">
         <DoctorCard v-bind="appoint" />
       </router-link>
     </div>

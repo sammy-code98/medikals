@@ -9,8 +9,8 @@
     </div>
     <div class="col"></div>
     <div class="col-6">
-      <div class="text-font text-accent text-h6">Dr. Emma Uchewa</div>
-      <div class="text-font text-grey-7 text-subtitle1">Dentist</div>
+      <div class="text-font text-accent text-h6">{{ name }}</div>
+      <div class="text-font text-grey-7 text-subtitle1">{{ field }}</div>
       <div class="row">
         <q-btn text-color="yellow" flat round icon="mdi-star" />
         <div class="q-mx-md">
@@ -46,27 +46,72 @@
   </div>
   <div class="text-h5 text-font q-mx-md q-mt-sm">Communication</div>
   <div class="q-px-md">
- <div class="row q-mt-sm">
-    <q-btn text-color="accent" flat round icon="mdi-chat-processing-outline" />
-    <div class="q-mx-md">
-      <div class="text-font  text-subtitle1">Messaging</div>
-      <div class="text-font text-grey-7 text-subtitle2">Let's chat and share some Photos</div>
+    <div class="row q-mt-sm">
+      <q-btn
+        text-color="accent"
+        flat
+        round
+        icon="mdi-chat-processing-outline"
+      />
+      <div class="q-mx-md">
+        <div class="text-font text-subtitle1">Messaging</div>
+        <div class="text-font text-grey-7 text-subtitle2">
+          Let's chat and share some Photos
+        </div>
+      </div>
+    </div>
+    <div class="row q-mt-sm">
+      <q-btn text-color="accent" flat round icon="mdi-phone-outline" />
+      <div class="q-mx-md">
+        <div class="text-font text-subtitle1">Audio call</div>
+        <div class="text-font text-grey-7 text-subtitle2">
+          Directly call your doctor
+        </div>
+      </div>
+    </div>
+    <div class="row q-mt-sm">
+      <q-btn text-color="accent" flat round icon="mdi-video-outline" />
+      <div class="q-mx-md">
+        <div class="text-font text-subtitle1">Video call</div>
+        <div class="text-font text-grey-7 text-subtitle2">
+          See your doctor live
+        </div>
+      </div>
     </div>
   </div>
-  <div class="row q-mt-sm">
-    <q-btn text-color="accent" flat round icon="mdi-phone-outline" />
-    <div class="q-mx-md">
-      <div class="text-font  text-subtitle1">Audio call</div>
-      <div class="text-font text-grey-7 text-subtitle2">Directly call your doctor</div>
-    </div>
-  </div>
-  <div class="row q-mt-sm">
-    <q-btn text-color="accent" flat round icon="mdi-video-outline" />
-    <div class="q-mx-md">
-      <div class="text-font  text-subtitle1">Video call</div>
-      <div class="text-font text-grey-7 text-subtitle2">See your doctor live</div>
-    </div>
-  </div>
-  </div>
- 
 </template>
+
+<script>
+import { useRoute } from "vue-router";
+import { ref, onMounted, watchEffect } from "vue";
+export default {
+  setup() {
+    const route = useRoute();
+    let field = ref("");
+    let name = ref("");
+
+    function getField() {
+      field.value = route.params.speciality;
+    }
+    function getName() {
+      name.value = route.params.profile;
+    }
+
+    onMounted(() => {
+      getField();
+      getName();
+    });
+
+    watchEffect(() => {
+      getField();
+      getName();
+    });
+    return {
+      field,
+      name,
+      getName,
+      getField,
+    };
+  },
+};
+</script>

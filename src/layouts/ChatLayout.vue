@@ -11,10 +11,11 @@
           to="/chats"
         />
         <q-space />
-        <span class="text-accent text-h6 text-font">{{ $route.name }}</span>
+        <span class="text-accent text-h6 text-font">{{ msgHeader }}</span>
         <q-space />
 
-        <q-btn flat round dense icon="mdi-dots-vertical" color="black" />
+        <q-btn flat round dense icon="mdi-phone-outline" text-color="accent" />
+        <q-btn flat round dense icon="mdi-video-outline" text-color="accent" />
       </q-toolbar>
     </q-header>
 
@@ -50,13 +51,27 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { useRoute } from "vue-router";
+
+import { ref, onMounted, watchEffect } from "vue";
 export default {
   name: "MainLayout",
   setup() {
     const newText = ref("");
+    const route = useRoute();
+    let msgHeader = ref("");
+
+    function getHeader() {
+      msgHeader = route.params.private;
+    }
+    onMounted(() => {
+      getHeader();
+    });
+
+    watchEffect(() => getHeader());
     return {
       newText,
+      msgHeader,
     };
   },
 };
