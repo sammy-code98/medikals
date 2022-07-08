@@ -31,6 +31,7 @@
 </template>
 
 <script>
+
 const messages = [
   {
     name: "Dr. Emma Uchewa",
@@ -70,6 +71,7 @@ const messages = [
 ];
 export default {
   setup() {
+
     return {
       messages,
     };
