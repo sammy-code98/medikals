@@ -2,19 +2,13 @@
   <q-layout view="lHh Lpr lFf">
     <q-header class="bg-white">
       <q-toolbar>
-        <q-btn
-          flat
-          round
-          dense
-          icon="mdi-less-than"
-          color="black"
-          to="/dashboard"
-        />
+        <q-btn flat round dense icon="mdi-view-grid-outline" color="black" />
         <q-space />
-        <span class="text-accent text-h6 text-font">{{ $route.name }}</span>
+          <q-input class="q-ma-sm" dense rounded outlined v-model="text" placeholder="Search Medics Messenger" />
         <q-space />
-
-        <q-btn flat round dense icon="mdi-dots-vertical" color="black" />
+        <q-avatar rounded class="q-mx-sm">
+          <img src="https://cdn.quasar.dev/img/avatar.png" />
+        </q-avatar>
       </q-toolbar>
     </q-header>
 
@@ -44,10 +38,13 @@
 </template>
 
 <script>
+import { ref } from "vue";
 export default {
   name: "MainLayout",
   setup() {
-    return {};
+    return {
+      text: ref(""),
+    };
   },
 };
 </script>
