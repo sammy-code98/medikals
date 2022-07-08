@@ -90,13 +90,24 @@ const routes = [
     ],
   },
   {
+    path: "/chats",
+    component: () => import("src/layouts/ChatListLayout.vue"),
+    children: [
+      {
+        path: "",
+        component: () => import("pages/Chat/ChatList.vue"),
+        name: "Medics  Messenger",
+      },
+    ],
+  },
+
+  {
     path: "/chat",
     component: () => import("src/layouts/ChatLayout.vue"),
     children: [
       {
         path: "",
         component: () => import("pages/Chat.vue"),
-        name: "Medics  Messenger",
       },
     ],
   },
