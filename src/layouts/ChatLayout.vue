@@ -11,7 +11,7 @@
           to="/chats"
         />
         <q-space />
-        <span class="text-accent text-h6 text-font">{{ $route.name }}</span>
+        <span class="text-accent text-h6 text-font">e{{ $route.name }}</span>
         <q-space />
 
         <q-btn flat round dense icon="mdi-dots-vertical" color="black" />

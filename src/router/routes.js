@@ -101,12 +101,12 @@ const routes = [
   },
 
   {
-    path: "/chat",
+    path: "/chat/:private",
     component: () => import("src/layouts/ChatLayout.vue"),
     children: [
       {
-        path: "",
-        component: () => import("src/pages/Chat/Chat.vue"),
+        path: "/chat/:private",
+        component: () => import("src/pages/Chat/_Chat.vue"),
         name: "Medics  Messenger",
 
       },
