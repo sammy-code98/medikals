@@ -14,8 +14,8 @@
         <span class="text-accent text-h6 text-font">{{ msgHeader }}</span>
         <q-space />
 
-        <q-btn flat round dense icon="mdi-phone-in-talk-outline" color="accent" />
-        <q-btn flat round dense icon="mdi-message-video" color="accent" />
+        <q-btn flat round dense icon="mdi-phone-outline" text-color="accent" />
+        <q-btn flat round dense icon="mdi-video-outline" text-color="accent" />
       </q-toolbar>
     </q-header>
 
