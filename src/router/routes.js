@@ -96,7 +96,6 @@ const routes = [
       {
         path: "",
         component: () => import("pages/Chat/ChatList.vue"),
-        name: "Medics  Messenger",
       },
     ],
   },
@@ -108,6 +107,8 @@ const routes = [
       {
         path: "",
         component: () => import("src/pages/Chat/Chat.vue"),
+        name: "Medics  Messenger",
+
       },
     ],
   },

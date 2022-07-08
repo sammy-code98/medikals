@@ -4,7 +4,7 @@
       <q-toolbar>
         <q-btn flat round dense icon="mdi-view-grid-outline" color="black" />
         <q-space />
-        <span class="text-accent text-h6 text-font">{{ $route.name }}</span>
+          <q-input class="q-ma-sm" dense rounded outlined v-model="text" placeholder="Search Medics Messenger" />
         <q-space />
         <q-avatar rounded class="q-mx-sm">
           <img src="https://cdn.quasar.dev/img/avatar.png" />
@@ -38,10 +38,13 @@
 </template>
 
 <script>
+import { ref } from "vue";
 export default {
   name: "MainLayout",
   setup() {
-    return {};
+    return {
+      text: ref(""),
+    };
   },
 };
 </script>

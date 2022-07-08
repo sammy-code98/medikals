@@ -8,7 +8,7 @@
           dense
           icon="mdi-less-than"
           color="black"
-          to="/dashboard"
+          to="/chats"
         />
         <q-space />
         <span class="text-accent text-h6 text-font">{{ $route.name }}</span>
