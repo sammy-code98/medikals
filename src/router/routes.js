@@ -107,7 +107,7 @@ const routes = [
     children: [
       {
         path: "",
-        component: () => import("pages/Chat.vue"),
+        component: () => import("src/pages/Chat/Chat.vue"),
       },
     ],
   },
