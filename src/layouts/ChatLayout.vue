@@ -30,6 +30,9 @@
           v-model="newText"
           placeholder="Type your message"
         >
+          <template v-slot:before>
+            <q-icon name="mdi-plus" color="accent" />
+          </template>
           <template v-slot:after>
             <q-btn
               round

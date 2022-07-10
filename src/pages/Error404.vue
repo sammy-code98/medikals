@@ -1,21 +1,24 @@
 <template>
-  <div class="fullscreen bg-blue text-white text-center q-pa-md flex flex-center">
+  <div class="fullscreen text-accent text-center flex flex-center">
     <div>
-      <div style="font-size: 30vh">
-        404
-      </div>
+      <img
+        class="q-ml-xl"
+        alt="Quasar logo"
+        src="~assets/heart.svg"
+        style="width: 300px; height: 300px"
+      />
 
-      <div class="text-h2" style="opacity:.4">
-        Oops. Nothing here...
-      </div>
+      <div style="font-size: 20vh" class="text-font">404</div>
+
+      <div class="text-h5" style="opacity: 0.4">Oops. Nothing here...</div>
 
       <q-btn
-        class="q-mt-xl"
-        color="white"
-        text-color="blue"
+        class="q-mt-lg"
+        color="accent"
+        text-color="white"
         unelevated
-        to="/"
-        label="Go Home"
+        to="/dashboard"
+        label="Take a ride back Home"
         no-caps
       />
     </div>
@@ -23,9 +26,9 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'Error404'
-})
+  name: "Error404",
+});
 </script>
