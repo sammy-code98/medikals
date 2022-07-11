@@ -22,7 +22,7 @@
       v-for="profile in profileData"
       :key="profile.icon"
     >
-      <q-item>
+      <q-item v-ripple>
         <q-item-section avatar>
           <q-btn round flat color="accent" :icon="profile.icon" />
         </q-item-section>

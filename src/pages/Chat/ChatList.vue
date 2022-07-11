@@ -10,7 +10,7 @@
         <q-list bordered padding>
           <q-item clickable v-ripple>
             <q-item-section top avatar>
-              <q-avatar>
+              <q-avatar rounded>
                 <img :src="message.img" />
               </q-avatar>
             </q-item-section>
