@@ -26,8 +26,12 @@
     <!-- footer menu -->
     <q-footer class="bg-white" bordered>
       <q-card flat square>
-        <q-tabs class="text-accent">
-          <q-route-tab icon="mdi-home"  to="/dashboard" />
+        <q-tabs
+          class="text-grey-7"
+          active-class="text-accent"
+          indicator-color="transparent"
+        >
+          <q-route-tab icon="mdi-home" to="/dashboard" />
 
           <q-route-tab icon="mdi-chat-processing-outline" exact to="/chats" />
 
@@ -44,8 +48,12 @@
 
     <q-page-container>
       <div>
-        <div class="q-mx-md q-mt-sm text-font text-grey-7 text-subtitle1">Hi there! 👋</div>
-        <div class="q-mx-md text-font text-grey-7 text-h4">Keep taking care of your health</div>
+        <div class="q-mx-md q-mt-sm text-font text-grey-7 text-subtitle1">
+          Hi there! 👋
+        </div>
+        <div class="q-mx-md text-font text-grey-7 text-h4">
+          Keep taking care of your health
+        </div>
       </div>
       <Search class="q-mt-sm" />
       <div class="row justify-between q-pa-md">
