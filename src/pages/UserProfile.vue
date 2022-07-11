@@ -5,13 +5,7 @@
         <q-avatar size="150px" class="q-ma-lg">
           <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
         </q-avatar>
-        <q-btn
-          class="float-right change-icon"
-          round
-          dense
-          color="primary"
-          icon="mdi-pencil-minus-outline"
-        />
+  
       </div>
     </div>
   </div>
@@ -48,11 +42,10 @@
 <script>
 const profileData = [
   { icon: "mdi-lock-outline", title: "Privacy & Settings" },
-  { icon: "mdi-bell-outline", title: "Notifications" },
-  { icon: "mdi-clock-outline", title: "Order History" },
-  { icon: "mdi-heart-outline", title: "Favourites" },
-  { icon: "mdi-gift-outline", title: "Voucher & Gift Cards" },
-  { icon: "mdi-google-maps", title: "Shipping Address" },
+  { icon: "mdi-database", title: "Personal Data" },
+  { icon: "mdi-email-sync", title: "Email and Payment" },
+  { icon: "mdi-google-maps", title: "My Location" },
+  { icon: "mdi-calendar", title: "My Schedule" },
 ];
 export default {
   setup() {
