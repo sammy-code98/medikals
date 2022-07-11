@@ -15,7 +15,11 @@
     <!-- footer menu -->
     <q-footer class="bg-white" bordered>
       <q-card flat square>
-        <q-tabs class="text-accent">
+        <q-tabs
+          class="text-grey-7"
+          active-class="text-accent"
+          indicator-color="transparent"
+        >
           <q-route-tab icon="mdi-home" exact to="/dashboard" />
 
           <q-route-tab icon="mdi-chat-processing-outline" exact to="/chats" />
