@@ -5,12 +5,12 @@
         <q-avatar size="150px" class="q-ma-lg">
           <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
         </q-avatar>
-  
+
       </div>
     </div>
   </div>
   <div class="q-mt-sm">
-    <div class="text-center text-font text-h6">John Doe</div>
+    <div class="text-center text-font text-grey-7 text-h6">John Doe</div>
     <div class="text-center text-font text-accent text-subtitle1">
       JohnDoe@gmail.com
     </div>
@@ -28,7 +28,7 @@
         </q-item-section>
 
         <q-item-section>
-          <q-item-label class="text-font text-subtitle1">{{
+          <q-item-label class="text-font text-grey-7 text-subtitle1">{{
             profile.title
           }}</q-item-label>
         </q-item-section>
