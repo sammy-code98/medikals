@@ -1,6 +1,13 @@
 <template>
-  <div >
-    <q-btn-dropdown color="grey" flat label="Location" class="text-font text-center text-subtitle1" no-caps>
+  <div>
+    <q-btn-dropdown
+    dense
+      color="grey-7"
+      flat
+      label="Location"
+      class="text-font text-center text-subtitle1"
+      no-caps
+    >
       <q-list>
         <q-item clickable v-close-popup @click="onItemClick">
           <q-item-section>

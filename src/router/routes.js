@@ -85,7 +85,7 @@ const routes = [
       {
         path: "",
         component: () => import("pages/UserProfile.vue"),
-        name: "Profile",
+        name: "My Profile",
       },
     ],
   },

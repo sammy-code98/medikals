@@ -43,6 +43,10 @@
     </q-footer>
 
     <q-page-container>
+      <div>
+        <div class="q-mx-md q-mt-sm text-font text-grey-7 text-subtitle1">Hi there! 👋</div>
+        <div class="q-mx-md text-font text-grey-7 text-h4">Keep taking care of your health</div>
+      </div>
       <Search class="q-mt-sm" />
       <div class="row justify-between q-pa-md">
         <div class="text-accent text-font text-h6 text-weight-thin">
