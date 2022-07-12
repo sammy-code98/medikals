@@ -5,8 +5,6 @@
       v-for="(spec, indx) in specialities"
       :key="indx"
     >
-      <!-- color="accent" -->
-
       <q-btn
         :color="getCurrentSpec(spec.title) ? 'accent' : 'grey-7'"
         flat
