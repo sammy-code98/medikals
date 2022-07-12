@@ -1,10 +1,10 @@
 <template>
   <q-page>
     <div
-      class="text-center text-subtitle2 text-font text-grey-7 q-mt-md q-pb-sm"
+      class="text-center text-subtitle2 text-font text-grey-7 q-mt-md q-mx-md q-pb-sm"
     >
-      Select a Doctor of your choice from our team of
-      <br />
+      Get medical advice , prescribtions, test and referrals from our team of
+      seasoned
       <span class="text-accent text-weight-bold">{{ specTitle }}</span>
     </div>
     <div v-for="appoint in appointment" :key="appoint.name">

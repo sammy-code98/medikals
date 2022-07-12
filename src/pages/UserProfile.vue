@@ -46,6 +46,8 @@ const profileData = [
   { icon: "mdi-email-sync", title: "Email and Payment" },
   { icon: "mdi-google-maps", title: "My Location" },
   { icon: "mdi-calendar", title: "My Schedule" },
+    { icon: "mdi-cog-outline", title: "Settings" },
+
 ];
 export default {
   setup() {
