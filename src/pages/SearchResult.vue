@@ -28,6 +28,10 @@
 </template>
 
 <script>
+import {useMeta} from 'quasar'
+const metaData ={
+  title: 'Medicals || Search Results'
+}
 const searchResult = [
   { name: "Dr. Emma Uchewa", field: "Dentist" },
   { name: "Dr.  Uchewa", field: "Dentist" },
@@ -42,6 +46,7 @@ import SearchInput from "../components/SearchInput.vue";
 export default {
   components: { SearchInput },
   setup() {
+    useMeta(metaData)
     return {
       searchResult,
     };

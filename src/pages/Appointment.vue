@@ -27,9 +27,14 @@ const eventData = [
   },
 ];
 import EventCard from "../components/EventCard.vue";
+import { useMeta } from "quasar";
+const metaData = {
+  title: "Medicals || Appointments",
+};
 export default {
   components: { EventCard },
   setup() {
+    useMeta(metaData);
     return {
       EventCard,
       eventData,

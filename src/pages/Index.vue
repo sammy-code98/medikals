@@ -31,9 +31,15 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
+import { useMeta } from "quasar";
 
-export default defineComponent({
+const metaData = {
+  title: "Medicals ",
+};
+export default {
   name: "PageIndex",
-});
+  setup() {
+    useMeta(metaData);
+  },
+};
 </script>

@@ -31,6 +31,10 @@
 </template>
 
 <script>
+import { useMeta } from "quasar";
+const metaData = {
+  title: "Medicals || Chats",
+};
 
 const messages = [
   {
@@ -71,7 +75,7 @@ const messages = [
 ];
 export default {
   setup() {
-
+    useMeta(metaData);
     return {
       messages,
     };

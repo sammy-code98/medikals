@@ -84,8 +84,13 @@
 <script>
 import { useRoute } from "vue-router";
 import { ref, onMounted, watchEffect } from "vue";
+import {useMeta} from "quasar"
+const metaData = {
+  title: "Medicals || DocProfile"
+}
 export default {
   setup() {
+    useMeta(metaData)
     const route = useRoute();
     let field = ref("");
     let name = ref("");

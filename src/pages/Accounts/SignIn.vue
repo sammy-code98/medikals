@@ -58,9 +58,14 @@
 
 <script>
 import { ref } from "vue";
+import { useMeta } from "quasar";
 
+const metaData = {
+  title: "Medicals || Sign In",
+};
 export default {
   setup() {
+    useMeta(metaData);
     const name = ref("");
     const email = ref("");
     const password = ref("");
