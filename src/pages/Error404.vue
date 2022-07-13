@@ -26,9 +26,15 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
-
-export default defineComponent({
+import { useMeta} from "quasar"
+const metaData = {
+  title:"Medicals || 404"
+}
+export default {
   name: "Error404",
-});
+  setup() {
+    useMeta(metaData)
+  }
+}
+;
 </script>

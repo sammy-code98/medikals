@@ -40,6 +40,10 @@
 </template>
 
 <script>
+import {useMeta} from "quasar"
+const metaData ={
+  title: "Medicals || UserProfile"
+}
 const profileData = [
   { icon: "mdi-lock-outline", title: "Privacy & Settings" },
   { icon: "mdi-database", title: "Personal Data" },
@@ -51,6 +55,7 @@ const profileData = [
 ];
 export default {
   setup() {
+    useMeta(metaData);
     return {
       profileData,
     };
