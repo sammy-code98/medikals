@@ -2,16 +2,9 @@
   <q-layout view="lHh Lpr lFf">
     <q-header class="bg-white">
       <q-toolbar>
-        <q-btn flat round dense icon="mdi-view-grid-outline" color="black" />
+        <q-btn flat round dense icon="mdi-view-grid-outline" color="grey-7" />
         <q-space />
-        <q-input
-          class="q-ma-sm"
-          dense
-          rounded
-          outlined
-          v-model="text"
-          placeholder="Search Medics Messenger"
-        />
+        <span class="text-accent text-h6 text-font">{{ $route.name }}</span>
         <q-space />
         <q-avatar rounded class="q-mx-sm">
           <img src="https://cdn.quasar.dev/img/avatar.png" />
@@ -54,7 +47,7 @@ export default {
   name: "MainLayout",
   setup() {
     return {
-      text: ref(""),
+      search: ref(""),
     };
   },
 };

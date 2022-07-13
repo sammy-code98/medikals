@@ -2,7 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-header class="bg-white">
       <q-toolbar>
-        <q-btn flat round dense icon="mdi-view-grid-outline" color="black" />
+        <q-btn flat round dense icon="mdi-view-grid-outline" color="grey-7" />
         <q-space />
         <div>
           <location />
