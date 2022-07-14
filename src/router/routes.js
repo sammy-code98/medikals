@@ -111,6 +111,16 @@ const routes = [
       },
     ],
   },
+  {
+    path: "/call/voice",
+    component: () => import("src/layouts/CallLayout.vue"),
+    children: [
+      {
+        path: "/call/voice",
+        component: () => import("src/pages/Calls/VoiceCall.vue"),
+      },
+    ],
+  },
   // Always leave this as last one,
   // but you can also remove it
   {

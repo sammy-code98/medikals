@@ -7,14 +7,21 @@
           round
           dense
           icon="mdi-less-than"
-          color="black"
+          color="grey-7"
           to="/chats"
         />
         <q-space />
         <span class="text-accent text-h6 text-font">{{ msgHeader }}</span>
         <q-space />
 
-        <q-btn flat round dense icon="mdi-phone-outline" text-color="accent" />
+        <q-btn
+          flat
+          round
+          dense
+          icon="mdi-phone-outline"
+          text-color="accent"
+          to="/call/voice"
+        />
         <q-btn flat round dense icon="mdi-video-outline" text-color="accent" />
       </q-toolbar>
     </q-header>
