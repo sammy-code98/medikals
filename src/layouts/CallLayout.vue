@@ -1,18 +1,8 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header class="bg-white">
-      <q-toolbar>
-        <q-btn
-          flat
-          round
-          dense
-          icon="mdi-less-than"
-          color="grey-7"
-          to="/chats"
-        />
-      </q-toolbar>
-    </q-header>
-
+  <q-layout view="hHh lpR fFf">
+    <q-page-container>
+      <router-view />
+    </q-page-container>
     <!-- footer menu -->
     <q-footer class="bg-white">
       <q-card class="curved-card">
@@ -42,10 +32,6 @@
         </div>
       </q-card>
     </q-footer>
-
-    <q-page-container>
-      <router-view />
-    </q-page-container>
   </q-layout>
 </template>
 
