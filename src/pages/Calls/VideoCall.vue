@@ -1,15 +1,18 @@
 <template>
   <div>
-    <!-- <q-btn flat round dense icon="mdi-less-than" color="grey-7" to="/chats" /> -->
-    <q-img src="~assets/callBg.svg" style="height: 83vh">
+    <q-img
+      src="https://cdn.quasar.dev/img/avatar.png"
+      img-class="my-custom-image"
+      style="height: 83vh"
+    >
       <div class="absolute-full">
-        <div class="row justify-center q-mt-xl">
-          <q-avatar size="120px">
+        <div class="row justify-end q-mt-xl">
+          <q-avatar rounded size="100px">
             <img src="https://cdn.quasar.dev/img/avatar.png" />
           </q-avatar>
         </div>
 
-        <div class="text-center text-font q-mt-xl">
+        <div class="absolute-bottom text-center text-font q-mb-md">
           <div class="text-h5">{{ callerName }}</div>
           <div class="text-subtitle1">40:00</div>
         </div>
@@ -41,3 +44,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.my-custom-image {
+  filter: brightness(1.75);
+}
+</style>

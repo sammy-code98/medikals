@@ -112,7 +112,6 @@ const routes = [
     ],
   },
   {
-    // path: "/call/voice",
     path: "/voiceCall/:callerId",
 
     component: () => import("src/layouts/CallLayout.vue"),
@@ -120,6 +119,17 @@ const routes = [
       {
         path: "/voiceCall/:callerId",
         component: () => import("src/pages/Calls/VoiceCall.vue"),
+      },
+    ],
+  },
+  {
+    path: "/videoCall/:callerId",
+
+    component: () => import("src/layouts/VideoCallLayout.vue"),
+    children: [
+      {
+        path: "/videoCall/:callerId",
+        component: () => import("src/pages/Calls/VideoCall.vue"),
       },
     ],
   },
