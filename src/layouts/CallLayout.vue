@@ -1,17 +1,5 @@
 <template>
   <q-layout view="hHh lpR fFf">
-    <!-- <q-header class="bg-white">
-      <q-toolbar>
-        <q-btn
-          flat
-          round
-          dense
-          icon="mdi-less-than"
-          color="grey-7"
-          to="/chats"
-        />
-      </q-toolbar>
-    </q-header> -->
     <q-page-container>
       <router-view />
     </q-page-container>

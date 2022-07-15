@@ -112,11 +112,13 @@ const routes = [
     ],
   },
   {
-    path: "/call/voice",
+    // path: "/call/voice",
+    path: "/voiceCall/:callerId",
+
     component: () => import("src/layouts/CallLayout.vue"),
     children: [
       {
-        path: "/call/voice",
+        path: "/voiceCall/:callerId",
         component: () => import("src/pages/Calls/VoiceCall.vue"),
       },
     ],

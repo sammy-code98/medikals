@@ -20,8 +20,9 @@
           dense
           icon="mdi-phone-outline"
           text-color="accent"
-          to="/call/voice"
+          :to="`/voiceCall/${msgHeader}`"
         />
+
         <q-btn flat round dense icon="mdi-video-outline" text-color="accent" />
       </q-toolbar>
     </q-header>
