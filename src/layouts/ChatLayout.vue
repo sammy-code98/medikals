@@ -63,7 +63,6 @@
 
 <script>
 import { useRoute } from "vue-router";
-
 import { ref, onMounted, watchEffect } from "vue";
 export default {
   name: "MainLayout",

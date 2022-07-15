@@ -3,6 +3,7 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+
     <!-- footer menu -->
     <q-footer class="bg-white">
       <q-card class="curved-card">
@@ -15,11 +16,14 @@
               icon="mdi-microphone-outline"
               size="md"
             />
+
+            <!-- :to="`/chat/${msgHeader}`"  -->
             <q-btn
               round
               color="red"
               icon="mdi-phone-hangup-outline"
               size="30px"
+              to="/chats"
             />
             <q-btn
               round
@@ -36,12 +40,24 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { useRoute } from "vue-router";
+import { ref, onMounted, watchEffect } from "vue";
 export default {
   name: "MainLayout",
   setup() {
+    const route = useRoute();
+    let msgHeader = ref("");
+
+    function getHeader() {
+      msgHeader = route.params.private;
+    }
+    onMounted(() => {
+      getHeader();
+    });
+
+    watchEffect(() => getHeader());
     return {
-      search: ref(""),
+      msgHeader,
     };
   },
 };
@@ -49,7 +65,7 @@ export default {
 
 <style scoped>
 .curved-card {
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
 }
 </style>

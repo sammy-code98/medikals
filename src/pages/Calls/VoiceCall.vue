@@ -1,7 +1,7 @@
 <template>
-  <div class="q-mt-md">
-    <q-btn flat round dense icon="mdi-less-than" color="grey-7" to="/chats" />
-    <q-img src="~assets/callBg.svg" style="height: 500px">
+  <div>
+    <!-- <q-btn flat round dense icon="mdi-less-than" color="grey-7" to="/chats" /> -->
+    <q-img src="~assets/callBg.svg" style="height: 83vh">
       <div class="absolute-full">
         <div class="row justify-center q-mt-xl">
           <q-avatar size="120px">
