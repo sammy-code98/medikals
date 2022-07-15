@@ -23,7 +23,14 @@
           :to="`/voiceCall/${msgHeader}`"
         />
 
-        <q-btn flat round dense icon="mdi-video-outline" text-color="accent" />
+        <q-btn
+          flat
+          round
+          dense
+          icon="mdi-video-outline"
+          text-color="accent"
+          :to="`/videoCall/${msgHeader}`"
+        />
       </q-toolbar>
     </q-header>
 
