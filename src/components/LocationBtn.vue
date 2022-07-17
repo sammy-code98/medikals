@@ -1,42 +1,63 @@
 <template>
   <div>
-    <q-btn-dropdown
-    dense
-      color="grey-7"
-      flat
-      label="Location"
-      class="text-font text-center text-subtitle1"
-      no-caps
+    <span class="text-accent q-mt-sm text-subtitle1  text-font">Location</span>
+    <q-select
+      dense
+      borderless
+      v-model="model"
+      :options="options"
+      class="q-ma-sm text-subtitle2 text-font"
     >
-      <q-list>
-        <q-item clickable v-close-popup @click="onItemClick">
-          <q-item-section>
-            <q-item-label>Photos</q-item-label>
-          </q-item-section>
-        </q-item>
-
-        <q-item clickable v-close-popup @click="onItemClick">
-          <q-item-section>
-            <q-item-label>Videos</q-item-label>
-          </q-item-section>
-        </q-item>
-
-        <q-item clickable v-close-popup @click="onItemClick">
-          <q-item-section>
-            <q-item-label>Articles</q-item-label>
-          </q-item-section>
-        </q-item>
-      </q-list>
-    </q-btn-dropdown>
+      <template v-slot:prepend>
+        <q-icon name="mdi-google-maps" class="text-primary" />
+      </template>
+    </q-select>
   </div>
 </template>
 <script>
+import { ref } from "vue";
 export default {
   setup() {
     return {
-      onItemClick() {
-        // console.log('Clicked on an Item')
-      },
+      model: ref("Lagos State"),
+      options: [
+        "Abia State",
+        "Adamawa State",
+        "Akwa Ibom State",
+        "Anambra State",
+        "Bauchi State",
+        "Bayelsa State",
+        "Benue State",
+        "Borno State",
+        "Cross River",
+        "Delta State",
+        "Ebonyi State",
+        "Edo State",
+        "Ekiti State",
+        "Enugu State",
+        "Gombe State",
+        "Imo State",
+        "Jigawa State",
+        "Kaduna State",
+        "Kano State",
+        "Katsina State ",
+        "Kebbi State",
+        "Kogi State",
+        "Kwara State",
+        "Lagos State",
+        "Nasarawa State",
+        "Niger State",
+        "Ogun State",
+        "Ondo State",
+        "Osun State ",
+        "Oyo State ",
+        "Plateau State ",
+        "Rivers State ",
+        "Sokoto State ",
+        "Taraba State",
+        "Yobe State",
+        "Zamfara State",
+      ],
     };
   },
 };
