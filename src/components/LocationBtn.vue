@@ -1,7 +1,17 @@
 <template>
   <div>
-    <span class="text-primary text-subtitle1 text-font">Location</span>
-    <q-select dense borderless v-model="model" :options="options" />
+    <span class="text-accent q-mt-sm text-subtitle1  text-font">Location</span>
+    <q-select
+      dense
+      borderless
+      v-model="model"
+      :options="options"
+      class="q-ma-sm text-subtitle2 text-font"
+    >
+      <template v-slot:prepend>
+        <q-icon name="mdi-google-maps" class="text-primary" />
+      </template>
+    </q-select>
   </div>
 </template>
 <script>

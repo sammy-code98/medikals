@@ -6,12 +6,6 @@
         <q-space />
         <div>
           <location />
-
-          <!-- <q-icon
-            name="mdi-google-maps"
-            class="text-primary"
-            style="font-size: 2em"
-          /> -->
           <!-- <span class="q-ma-sm text-accent text-subtitle1 text-font"
             >Lagos, Nigeria</span
           > -->
