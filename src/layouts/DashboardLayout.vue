@@ -6,9 +6,6 @@
         <q-space />
         <div>
           <location />
-          <!-- <span class="q-ma-sm text-accent text-subtitle1 text-font"
-            >Lagos, Nigeria</span
-          > -->
         </div>
         <q-space />
         <q-avatar rounded class="q-mx-sm">
