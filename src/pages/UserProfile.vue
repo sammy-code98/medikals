@@ -5,7 +5,6 @@
         <q-avatar size="150px" class="q-ma-lg">
           <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
         </q-avatar>
-
       </div>
     </div>
   </div>
@@ -40,18 +39,18 @@
 </template>
 
 <script>
-import {useMeta} from "quasar"
-const metaData ={
-  title: "Medicals || UserProfile"
-}
+import { useMeta } from "quasar";
+const metaData = {
+  title: "Medicals || UserProfile",
+};
 const profileData = [
   { icon: "mdi-lock-outline", title: "Privacy & Settings" },
   { icon: "mdi-database", title: "Personal Data" },
   { icon: "mdi-email-sync", title: "Email and Payment" },
   { icon: "mdi-google-maps", title: "My Location" },
   { icon: "mdi-calendar", title: "My Schedule" },
-    { icon: "mdi-cog-outline", title: "Settings" },
-
+  { icon: "mdi-cog-outline", title: "Settings" },
+  { icon: "mdi-logout", title: "Logout" },
 ];
 export default {
   setup() {
