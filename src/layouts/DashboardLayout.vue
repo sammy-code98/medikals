@@ -25,6 +25,8 @@
           <q-route-tab icon="mdi-home" to="/dashboard" />
 
           <q-route-tab icon="mdi-chat-processing-outline" exact to="/chats" />
+                    <q-route-tab icon="search" exact to="/search" />
+
 
           <q-route-tab
             icon="mdi-calendar-month-outline"
@@ -46,7 +48,6 @@
           Keep taking care of your health
         </div>
       </div>
-      <Search class="q-mt-sm" />
       <div class="row justify-between q-pa-md">
         <div class="text-accent text-font text-h6 text-weight-thin">
           Upcoming Events
@@ -76,7 +77,6 @@
 </template>
 
 <script>
-import Search from "../components/SearchInput.vue";
 import location from "../components/LocationBtn.vue";
 import EventCard from "../components/EventCard.vue";
 import FindTab from "../components/FindTab.vue";
@@ -88,7 +88,7 @@ const eventData = {
 };
 export default {
   name: "MainLayout",
-  components: { location, Search, EventCard, FindTab },
+  components: { location,  EventCard, FindTab },
   setup() {
     return {
       eventData,
