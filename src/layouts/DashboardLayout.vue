@@ -25,6 +25,8 @@
           <q-route-tab icon="mdi-home" to="/dashboard" />
 
           <q-route-tab icon="mdi-chat-processing-outline" exact to="/chats" />
+                    <q-route-tab icon="search" exact to="/search" />
+
 
           <q-route-tab
             icon="mdi-calendar-month-outline"

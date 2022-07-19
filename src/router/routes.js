@@ -57,7 +57,7 @@ const routes = [
     ],
   },
   {
-    path: "/search-result",
+    path: "/search",
     component: () => import("src/layouts/SearchLayout.vue"),
     children: [
       {
