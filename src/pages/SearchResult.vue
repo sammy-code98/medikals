@@ -42,12 +42,18 @@
         </q-card>
       </div>
     </div>
+    <!-- error page if no search word was found -->
+    <div class="row justify-center" v-if="mySearch && !filteredSearch.length">
+      <!-- <div class="text-h6 text-font text-grey-7">No Results Found</div> -->
+      <SearchNotFound/>
+    </div>
   </div>
 </template>
 
 <script>
 import { ref } from "vue";
 import { useMeta } from "quasar";
+import SearchNotFound from "../components/SearchNotFound.vue";
 const metaData = {
   title: "Medicals || Search Results",
 };
@@ -61,24 +67,27 @@ const searchResult = [
   { name: "Dr.  Uwa Udeh", field: "Anesthesiologists" },
   { name: "Dr. Ndidi U", field: "Psychiatrist" },
 ];
+
 let mySearch = ref("");
 
 export default {
+  components: { SearchNotFound },
   setup() {
     useMeta(metaData);
 
-
-
     function filteredSearch() {
       return searchResult.filter((search) => {
-        return search.name.toLowerCase().includes(mySearch.value.toLowerCase());
+        return (
+          search.name.toLowerCase().includes(mySearch.value.toLowerCase()) ||
+          search.field.toLowerCase().includes(mySearch.value.toLowerCase())
+        );
       });
     }
 
     return {
       searchResult,
       filteredSearch,
-      mySearch
+      mySearch,
     };
   },
 };
