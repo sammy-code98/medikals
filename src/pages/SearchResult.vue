@@ -44,7 +44,6 @@
     </div>
     <!-- error page if no search word was found -->
     <div class="row justify-center" v-if="mySearch && !filteredSearch.length">
-      <!-- <div class="text-h6 text-font text-grey-7">No Results Found</div> -->
       <SearchNotFound/>
     </div>
   </div>
