@@ -3,13 +3,18 @@
     <div class="q-pa-md">
       <img
         alt="Quasar logo"
-        src="~assets/medics.svg"
-        style="width: 300px; height: 400px"
+        src="~assets/notfound.svg"
+        style="width: 300px; height: 300px"
       />
-      <div class="text-center text-h2 text-weight-thin fancy-font text-grey-7">
-        Medicals
+      <div class="text-center text-h4 text-accent text-font">
+        No Results Found
+      </div>
+      <div class="text-center text-subtitle1 text-grey-7 text-font q-mt-sm">
+        We couldn't find what you searched for.
+      </div>
+      <div class="text-center text-subtitle1 text-grey-7 text-font">
+        Try searching again.
       </div>
     </div>
-
   </div>
 </template>
