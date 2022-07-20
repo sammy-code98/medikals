@@ -1,9 +1,23 @@
 <template>
   <div>
-    <SearchInput />
+    <div class="q-pa-md">
+      <q-input
+        v-model="mySearch"
+        round
+        dense
+        outlined
+        type="search"
+        placeholder="Search a doctor or nurse"
+        class="text-font text-subtitle1 shadow-4"
+      >
+        <template v-slot:prepend>
+          <q-icon name="search" class="text-primary" />
+        </template>
+      </q-input>
+    </div>
     <div class="row q-pa-md">
       <div
-        v-for="search in searchResult"
+        v-for="search in filteredSearch()"
         :key="search.name"
         class="col-6 q-pa-sm"
       >
@@ -14,15 +28,15 @@
             </q-avatar>
           </q-card-section>
           <q-card-section>
-            <div class="text-h6 text-center text-font q-mt-md">{{ search.name }}</div>
-            <div class="text-subtitle1 text-center text-font  text-grey-7">
+            <div class="text-h6 text-center text-font q-mt-md">
+              {{ search.name }}
+            </div>
+            <div class="text-subtitle1 text-center text-font text-grey-7">
               {{ search.field }}
             </div>
             <div class="q-mt-md">
               <q-icon name="mdi-star" class="text-yellow" />
-              <span class="text-font text-grey-7"
-                >5.0(230 reviews)</span
-              >
+              <span class="text-font text-grey-7">5.0(230 reviews)</span>
             </div>
           </q-card-section>
         </q-card>
@@ -32,34 +46,46 @@
 </template>
 
 <script>
+import { ref } from "vue";
 import { useMeta } from "quasar";
 const metaData = {
   title: "Medicals || Search Results",
 };
 const searchResult = [
-  { name: "Dr. Emma Uchewa", field: "Dentist" },
-  { name: "Dr.  Uchewa", field: "Dentist" },
-  { name: "Dr. Emma Uchewa", field: "Dentist" },
-  { name: "Dr. Emeak", field: "Dentist" },
-  { name: "Dr. Olamide", field: "Dentist" },
-  { name: "Dr. Emmaa", field: "Dentist" },
-  { name: "Dr. Emma Uwa", field: "Dentist" },
-  { name: "Dr. Ndidi U", field: "Dentist" },
+  { name: "Dr. Emma Uchewa", field: "Gynecologist" },
+  { name: "Dr. Daniel Emeka", field: "Dentist" },
+  { name: "Dr. Chidinma Peculiar", field: "Pediatricians " },
+  { name: "Dr. Emak", field: "Radiologists" },
+  { name: "Dr. Olamide", field: "Neurologists" },
+  { name: "Dr. Uwas", field: "Obstetricians" },
+  { name: "Dr.  Uwa Udeh", field: "Anesthesiologists" },
+  { name: "Dr. Ndidi U", field: "Psychiatrist" },
 ];
-import SearchInput from "../components/SearchInput.vue";
+let mySearch = ref("");
+
 export default {
-  components: { SearchInput },
   setup() {
     useMeta(metaData);
+
+
+
+    function filteredSearch() {
+      return searchResult.filter((search) => {
+        return search.name.toLowerCase().includes(mySearch.value.toLowerCase());
+      });
+    }
+
     return {
       searchResult,
+      filteredSearch,
+      mySearch
     };
   },
 };
 </script>
 
 <style lang="scss">
-.my-card{
+.my-card {
   height: 100%;
 }
 </style>
