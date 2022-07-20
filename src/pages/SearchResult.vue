@@ -43,7 +43,7 @@
       </div>
     </div>
     <!-- error page if no search word was found -->
-    <div class="row justify-center" v-if="mySearch && !filteredSearch.length">
+    <div class="row justify-center" v-if="mySearch && !filteredSearch().length">
       <SearchNotFound/>
     </div>
   </div>
