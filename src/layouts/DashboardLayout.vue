@@ -50,7 +50,7 @@
       </div>
       <div class="row justify-between q-pa-md">
         <div class="text-accent text-font text-h6 text-weight-thin">
-          Upcoming Events
+          Upcoming Appointments
         </div>
         <router-link to="/appointments">
           <div
