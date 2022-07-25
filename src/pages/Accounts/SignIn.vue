@@ -4,8 +4,8 @@
       <div class="text-center text-h4 text-font q-pb-md text-grey-7">
         Sign In
       </div>
-      <div class="text-center text-font text-subtitle1">
-        Health is Wealth, Sign In and get an appointment booked witht the best
+      <div class="text-center text-font text-grey-7 text-subtitle1">
+        Health is Wealth, Sign In and get an appointment booked with the best
         medical practicioners in your area
       </div>
       <q-card class="q-mt-xl" flat>
@@ -41,15 +41,15 @@
               no-caps
               dense
               type="submit"
-              color="primary"
+              color="accent"
             />
           </div>
         </q-form>
       </q-card>
-      <div class="q-mt-sm text-center text-font text-subtitle2">
+      <div class="q-mt-sm text-center text-grey-7 text-font text-subtitle2">
         Don't have an account yet?
         <router-link to="/account/signup">
-          <span class="text-primary">Sign Up</span>
+          <span class="text-accent">Sign Up</span>
         </router-link>
       </div>
     </div>

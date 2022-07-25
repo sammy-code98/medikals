@@ -5,6 +5,21 @@
         Create an account
       </div>
 
+      <div class="q-mt-sm ">
+        <q-btn
+          class="full-width q-pa-md q-ma-sm"
+          flat
+          no-caps
+          style="background: #e9e8e8; color: #000"
+          icon="mdi-google"
+          label="Sign Up with Google"
+        />
+      </div>
+
+      <div class="text-center text-h6 text-font text-grey-7 q-mt-lg">Or</div>
+            <div class="text-center text-font text-grey-7 text-subtitle1">Fill the form to Create an Account
+            </div>
+
       <q-card class="q-mt-xl" flat>
         <q-form class="q-gutter-md">
           <q-input
@@ -60,36 +75,17 @@
               no-caps
               dense
               type="submit"
-              color="primary"
+              color="accent"
             />
           </div>
         </q-form>
       </q-card>
 
-      <div class="text-center text-h6 text-font text-grey-7 q-mt-lg ">Or</div>
-
-      <div class="q-mt-sm q-mb-md">
-        <q-btn
-          class="full-width q-pa-md q-ma-sm"
-          flat
-          no-caps
-          style="background: #e9e8e8; color: #000"
-          icon="mdi-google"
-          label="Sign Up with Google"
-        />
-        <q-btn
-          class="full-width q-pa-md q-ma-sm"
-          flat
-          no-caps
-          style="background: #e9e8e8; color: #000"
-          icon="mdi-facebook"
-          label="Sign Up with Facebook"
-        />
-      </div>
-
-      <div class="q-mt-sm text-center text-font text-subtitle2">
+      <div class="q-mt-sm text-center text-grey-7 text-font text-subtitle2">
         Already have an account?
-        <router-link to="/account/signin"><span class="text-primary">Sign In</span> </router-link>
+        <router-link to="/account/signin"
+          ><span class="text-accent">Sign In</span>
+        </router-link>
       </div>
     </div>
   </div>
@@ -97,13 +93,13 @@
 
 <script>
 import { ref } from "vue";
-import {useMeta} from "quasar"
+import { useMeta } from "quasar";
 const metaData = {
   title: "Medicals || Sign Up",
-}
+};
 export default {
   setup() {
-    useMeta(metaData)
+    useMeta(metaData);
     const name = ref("");
     const email = ref("");
     const password = ref("");
@@ -117,4 +113,3 @@ export default {
   },
 };
 </script>
-
