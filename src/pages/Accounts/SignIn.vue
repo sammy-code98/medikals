@@ -42,6 +42,9 @@
             </template>
           </q-input>
 
+          <div v-if="errMsg" class="text-center text-font text-negative text-subtitle1">
+            {{ errMsg }}
+          </div>
           <div>
             <q-btn
               class="full-width q-pa-sm text-font"
@@ -80,6 +83,7 @@ export default {
     const password = ref("");
     const router = useRouter();
     const auth = getAuth();
+    const errMsg = ref("");
 
     function login() {
       signInWithEmailAndPassword(auth, email.value, password.value)
@@ -88,12 +92,26 @@ export default {
           router.push("/dashboard");
         })
         .catch((error) => {
-          console.log(error.message);
+          switch (error.code) {
+            case "auth/invalid-email":
+              errMsg.value = "Invalid Email";
+              break;
+            case "auth/user-not-found":
+              errMsg.value = "No account with that email was found";
+              break;
+            case "auth/wrong-password":
+              errMsg.value = "Incorrect password";
+              break;
+            default:
+              errMsg.value = "Email or password was incorrect";
+              break;
+          }
         });
     }
     return {
       email,
       password,
+      errMsg,
       isPwd: ref(true),
       login,
     };
