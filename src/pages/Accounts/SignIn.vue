@@ -23,16 +23,24 @@
           />
 
           <q-input
-            outlined
             v-model="password"
-            type="password"
+            outlined
             class="text-font text-subtitle1"
+            :type="isPwd ? 'password' : 'text'"
             placeholder="Enter your Password"
             lazy-rules
             :rules="[
               (val) => (val && val.length > 0) || 'Please type something',
             ]"
-          />
+          >
+            <template v-slot:append>
+              <q-icon
+                :name="isPwd ? 'visibility_off' : 'visibility'"
+                class="cursor-pointer"
+                @click="isPwd = !isPwd"
+              />
+            </template>
+          </q-input>
 
           <div>
             <q-btn
@@ -75,6 +83,7 @@ export default {
       email,
       password,
       date,
+      isPwd: ref(true),
     };
   },
 };
