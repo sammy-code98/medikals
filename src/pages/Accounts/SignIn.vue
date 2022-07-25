@@ -9,7 +9,7 @@
         medical practicioners in your area
       </div>
       <q-card class="q-mt-xl" flat>
-        <q-form class="q-gutter-md">
+        <q-form class="q-gutter-md" @submit.prevent="login">
           <q-input
             outlined
             v-model="email"
@@ -66,6 +66,8 @@
 
 <script>
 import { ref } from "vue";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useRouter } from "vue-router";
 import { useMeta } from "quasar";
 
 const metaData = {
@@ -74,16 +76,26 @@ const metaData = {
 export default {
   setup() {
     useMeta(metaData);
-    const name = ref("");
     const email = ref("");
     const password = ref("");
-    const date = ref("");
+    const router = useRouter();
+    const auth = getAuth();
+
+    function login() {
+      signInWithEmailAndPassword(auth, email.value, password.value)
+        .then(() => {
+          console.log("Successfully logged in!");
+          router.push("/dashboard");
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    }
     return {
-      name,
       email,
       password,
-      date,
       isPwd: ref(true),
+      login,
     };
   },
 };
