@@ -29,6 +29,14 @@ const routes = [
     ],
   },
   {
+    path:"/account/forgot-password",
+    component:()=> import("src/layouts/AccountLayout.vue"),
+    children:[{
+      path:"",
+      component:()=> import("pages/Accounts/ForgotPassword.vue")
+    }]
+  },
+  {
     path: "/dashboard",
     redirect: "/doctor/Gynecologist",
     component: () => import("src/layouts/DashboardLayout.vue"),

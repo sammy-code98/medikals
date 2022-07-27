@@ -42,8 +42,16 @@
             </template>
           </q-input>
 
-          <div v-if="errMsg" class="text-center text-font text-negative text-subtitle1">
+          <div
+            v-if="errMsg"
+            class="text-center text-font text-negative text-subtitle1"
+          >
             {{ errMsg }}
+          </div>
+          <div class="text-right text-font  text-accent text-weight-meduim text-subtitle2">
+            <router-link to="/account/forgot-password"
+              >Forgot Password?</router-link
+            >
           </div>
           <div>
             <q-btn

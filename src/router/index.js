@@ -47,11 +47,11 @@ export default route(function (/* { store, ssrContext } */) {
   //   }
   // });
 
-  Router.beforeEach(async (to, from) => {
-    // canUserAccess() returns `true` or `false`
-    const canAccess =  currentUser
-    console.log(canAccess);
-    if (!canAccess) return '/account/signin'
-  })
+  // Router.beforeEach(async (to, from) => {
+  //   // canUserAccess() returns `true` or `false`
+  //   const canAccess =  currentUser
+  //   console.log(canAccess);
+  //   if (!canAccess) return '/account/signin'
+  // })
   return Router;
 });
