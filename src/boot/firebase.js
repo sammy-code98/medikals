@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { deleteUser, getAuth, onAuthStateChanged } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAB6uEADnUGhqvYJ-NVnLo-0P3YhwtvHI0",
@@ -11,5 +12,15 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const firebase = initializeApp(firebaseConfig);
+
+// get current user info
+const auth = getAuth()
+const getCurentUser = () => {
+  console.log('ok');
+  return auth.currentUser
+
+};
+
+export { getCurentUser };
 
 export default firebase;

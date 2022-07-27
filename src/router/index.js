@@ -1,4 +1,5 @@
 import { route } from "quasar/wrappers";
+import firebase, { getCurentUser } from "../boot/firebase";
 import {
   createRouter,
   createMemoryHistory,
@@ -6,7 +7,6 @@ import {
   createWebHashHistory,
 } from "vue-router";
 import routes from "./routes";
-
 
 /*
  * If not building with SSR mode, you can
@@ -24,8 +24,6 @@ export default route(function (/* { store, ssrContext } */) {
     ? createWebHistory
     : createWebHashHistory;
 
-
-
   const Router = createRouter({
     scrollBehavior: () => ({ left: 0, top: 0 }),
     routes,
@@ -38,18 +36,22 @@ export default route(function (/* { store, ssrContext } */) {
     ),
   });
 
+  const currentUser = getCurentUser()
+  // // navigation guard
+  // Router.beforeEach(async (to, from, next) => {
+  //   const authRequired = to.matched.some((record) => record.meta.authRequired);
+  //   if (authRequired  && currentUser) {
+  //     next("Signin");
+  //   } else {
+  //     next("Dashboard");
+  //   }
+  // });
 
-
-  // navigation guard
-  Router.beforeEach(async(to, from, next) => {
-   const authRequired = to.matched.some(record => record.meta.authRequired)
-   if(authRequired && !currentUser){
-    next({
-      path:"/account/signin"
-    })
-   }else{
-    next()
-   }
-  });
+  Router.beforeEach(async (to, from) => {
+    // canUserAccess() returns `true` or `false`
+    const canAccess =  currentUser
+    console.log(canAccess);
+    if (!canAccess) return '/account/signin'
+  })
   return Router;
 });
