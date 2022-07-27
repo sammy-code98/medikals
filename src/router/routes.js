@@ -32,6 +32,9 @@ const routes = [
     path: "/dashboard",
     redirect: "/doctor/Gynecologist",
     component: () => import("src/layouts/DashboardLayout.vue"),
+    meta: {
+      authRequired: true,
+    },
     children: [
       {
         path: "/doctor/:speciality",
