@@ -1,4 +1,5 @@
 import { route } from "quasar/wrappers";
+import firebase, { getCurentUser } from "../boot/firebase";
 import {
   createRouter,
   createMemoryHistory,
@@ -35,12 +36,19 @@ export default route(function (/* { store, ssrContext } */) {
     ),
   });
 
-  Router.beforeEach((to, from) => {
-    if (
-      to.matched.some((record) => record.meta.requireAuth) &&
-      !store.getters["auth/isSignedIn"]
-    ) {
-      next({ name: "account-signin", query: { next: to.fullPath } });
+  const currentUser = getCurentUser();
+  console.log({ currentUser });
+  Router.beforeEach((to, from, next) => {
+    let isAuthenticated = to.matched.some((record) =>{
+      console.log({record})
+      return  record.meta.authRequired
+    });
+
+    console.log({ currentUser: isAuthenticated });
+
+    if (isAuthenticated && !currentUser) {
+      console.log("ol");
+      next({ name: "Signin", query: { next: to.fullPath } });
     } else {
       next();
     }

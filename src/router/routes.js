@@ -32,15 +32,24 @@ const routes = [
     path: "/dashboard",
     redirect: "/doctor/Gynecologist",
     component: () => import("src/layouts/DashboardLayout.vue"),
+    meta: {
+      authRequired: true,
+    },
     children: [
       {
         path: "/doctor/:speciality",
         component: () => import("pages/Dashboard.vue"),
         name: "Dashboard",
+        meta: {
+          authRequired: true,
+        },
       },
       {
         path: "/doctor/:speciality",
         component: () => import("pages/Doctors/_Index.vue"),
+        meta: {
+          authRequired: true,
+        },
       },
     ],
   },
@@ -70,6 +79,9 @@ const routes = [
   {
     path: "/appointments",
     component: () => import("src/layouts/AppointmentLayout.vue"),
+    meta: {
+      authRequired: true,
+    },
     children: [
       {
         path: "",
