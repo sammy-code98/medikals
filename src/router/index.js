@@ -36,22 +36,23 @@ export default route(function (/* { store, ssrContext } */) {
     ),
   });
 
-  const currentUser = getCurentUser()
-  // // navigation guard
-  // Router.beforeEach(async (to, from, next) => {
-  //   const authRequired = to.matched.some((record) => record.meta.authRequired);
-  //   if (authRequired  && currentUser) {
-  //     next("Signin");
-  //   } else {
-  //     next("Dashboard");
-  //   }
-  // });
+  const currentUser = getCurentUser();
+  console.log({ currentUser });
+  Router.beforeEach((to, from, next) => {
+    let isAuthenticated = to.matched.some((record) =>{
+      console.log({record})
+      return  record.meta.authRequired
+    });
 
-  // Router.beforeEach(async (to, from) => {
-  //   // canUserAccess() returns `true` or `false`
-  //   const canAccess =  currentUser
-  //   console.log(canAccess);
-  //   if (!canAccess) return '/account/signin'
-  // })
+    console.log({ currentUser: isAuthenticated });
+
+    if (isAuthenticated && !currentUser) {
+      console.log("ol");
+      next({ name: "Signin", query: { next: to.fullPath } });
+    } else {
+      next();
+    }
+  });
+
   return Router;
 });

@@ -48,10 +48,16 @@ const routes = [
         path: "/doctor/:speciality",
         component: () => import("pages/Dashboard.vue"),
         name: "Dashboard",
+        meta: {
+          authRequired: true,
+        },
       },
       {
         path: "/doctor/:speciality",
         component: () => import("pages/Doctors/_Index.vue"),
+        meta: {
+          authRequired: true,
+        },
       },
     ],
   },
@@ -81,6 +87,9 @@ const routes = [
   {
     path: "/appointments",
     component: () => import("src/layouts/AppointmentLayout.vue"),
+    meta: {
+      authRequired: true,
+    },
     children: [
       {
         path: "",
