@@ -13,6 +13,7 @@
           style="background: #e9e8e8; color: #000"
           icon="mdi-google"
           label="Sign Up with Google"
+          @click.prevent="registerWithGoogle"
         />
       </div>
 
@@ -103,7 +104,12 @@
 
 <script>
 import { ref } from "vue";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+} from "firebase/auth";
 import { useRouter } from "vue-router";
 import { useMeta } from "quasar";
 const metaData = {
@@ -131,12 +137,38 @@ export default {
           console.log("error:", error.code);
         });
     }
+
+    function registerWithGoogle() {
+      // init provider
+      const provider = new GoogleAuthProvider();
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          // This gives you a Google Access Token. You can use it to access the Google API.
+          const credential = GoogleAuthProvider.credentialFromResult(result);
+          const token = credential.accessToken;
+
+          // The signed-in user info.
+          const user = result.user;
+          // ... if success redirect user to main component
+          router.push("/dashboard");
+        })
+        .catch((error) => {
+          // Handle Errors here.
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // The email of the user's account used.
+          const email = error.email;
+          // The AuthCredential type that was used.
+          const credential = GoogleAuthProvider.credentialFromError(error);
+        });
+    }
     return {
       name,
       email,
       password,
       date,
       register,
+      registerWithGoogle,
       isPwd: ref(true),
     };
   },
