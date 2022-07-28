@@ -48,7 +48,9 @@
           >
             {{ errMsg }}
           </div>
-          <div class="text-right text-font  text-accent text-weight-meduim text-subtitle2">
+          <div
+            class="text-right text-font text-accent text-weight-meduim text-subtitle2"
+          >
             <router-link to="/account/forgot-password"
               >Forgot Password?</router-link
             >
@@ -79,7 +81,7 @@
 import { ref } from "vue";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "vue-router";
-import { useMeta } from "quasar";
+import { useMeta, useQuasar } from "quasar";
 
 const metaData = {
   title: "Medicals || Sign In",
@@ -92,14 +94,21 @@ export default {
     const router = useRouter();
     const auth = getAuth();
     const errMsg = ref("");
+    const $q = useQuasar();
 
     function login() {
       signInWithEmailAndPassword(auth, email.value, password.value)
         .then(() => {
+          $q.loading.show({
+            delay: 400, // ms
+          });
+
           console.log("Successfully logged in!");
           router.push("/dashboard");
         })
         .catch((error) => {
+          $q.loading.hide();
+
           switch (error.code) {
             case "auth/invalid-email":
               errMsg.value = "Invalid Email";
@@ -116,6 +125,7 @@ export default {
           }
         });
     }
+
     return {
       email,
       password,

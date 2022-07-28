@@ -7,7 +7,7 @@
         style="width: 300px; height: 400px"
       />
       <div class="text-center text-h2 text-weight-thin fancy-font text-grey-7">
-        Medicals
+        Medikals
       </div>
     </div>
     <div class="row q-ma-md q-pa-md">
