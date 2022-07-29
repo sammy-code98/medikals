@@ -25,8 +25,7 @@
           <q-route-tab icon="mdi-home" to="/dashboard" />
 
           <q-route-tab icon="mdi-chat-processing-outline" exact to="/chats" />
-                    <q-route-tab icon="search" exact to="/search" />
-
+          <q-route-tab icon="search" exact to="/search" />
 
           <q-route-tab
             icon="mdi-calendar-month-outline"
@@ -41,8 +40,8 @@
 
     <q-page-container>
       <div>
-        <div class="q-mx-md q-mt-sm text-font text-grey-7 text-subtitle1">
-          Hi there! 👋
+        <div class="q-mx-md q-mt-sm text-font text-grey-7 text-h6">
+          Hi <span class="text-h5 text-accent">{{ email.split("@")[0] }} </span> !👋
         </div>
         <div class="q-mx-md text-font text-grey-7 text-h4">
           Keep taking care of your health
@@ -77,6 +76,9 @@
 </template>
 
 <script>
+import { ref, onMounted } from "vue";
+import { getAuth } from "firebase/auth";
+
 import location from "../components/LocationBtn.vue";
 import EventCard from "../components/EventCard.vue";
 import FindTab from "../components/FindTab.vue";
@@ -88,10 +90,24 @@ const eventData = {
 };
 export default {
   name: "MainLayout",
-  components: { location,  EventCard, FindTab },
+  components: { location, EventCard, FindTab },
   setup() {
+    const userName = ref("");
+    const email = ref("");
+    const auth = getAuth();
+    const user = auth.currentUser;
+
+    onMounted(() => {
+      if (user) {
+        email.value = user.email;
+      } else {
+        console.log("no username");
+      }
+    });
+
     return {
       eventData,
+      email,
     };
   },
 };
