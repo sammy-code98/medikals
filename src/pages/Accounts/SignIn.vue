@@ -104,11 +104,11 @@ export default {
           });
 
           console.log("Successfully logged in!");
+          $q.loading.hide();
+
           router.push("/dashboard");
         })
         .catch((error) => {
-          $q.loading.hide();
-
           switch (error.code) {
             case "auth/invalid-email":
               errMsg.value = "Invalid Email";

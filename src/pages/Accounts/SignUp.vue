@@ -128,8 +128,13 @@ export default {
     function register() {
       createUserWithEmailAndPassword(auth, email.value, password.value)
         .then(() => {
+          $q.loading.show({
+            delay: 400, // ms
+          });
           console.log("Successfully registered!");
-          router.push("/account/signin");
+          $q.loading.hide();
+
+          router.push("/dashboard");
         })
         .catch((error) => {
           const errorCode = error.code;
