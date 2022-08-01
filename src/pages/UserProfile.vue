@@ -9,19 +9,22 @@
     </div>
   </div>
   <div class="q-mt-sm">
-    <div class="text-center text-font text-grey-7 text-h6">{{email.split("@")[0]}}</div>
+    <div class="text-center text-font text-grey-7 text-h6">
+      {{ email.split("@")[0] }}
+    </div>
     <div class="text-center text-font text-accent text-subtitle1">
       {{ email }}
     </div>
   </div>
   <div>
     <q-card
+    @click="signOut()"
       class="q-ma-md"
       flat
       v-for="profile in profileData"
       :key="profile.icon"
     >
-      <q-item v-ripple>
+      <q-item v-ripple >
         <q-item-section avatar>
           <q-btn round flat color="accent" :icon="profile.icon" />
         </q-item-section>
@@ -42,17 +45,20 @@
 import { ref, onMounted } from "vue";
 import { getAuth } from "firebase/auth";
 import { useMeta } from "quasar";
+import { useRouter } from "vue-router";
+import { useQuasar } from "quasar";
+
 const metaData = {
   title: "Medicals || UserProfile",
 };
 const profileData = [
-  { icon: "mdi-lock-outline", title: "Privacy & Settings" },
-  { icon: "mdi-database", title: "Personal Data" },
-  { icon: "mdi-email-sync", title: "Email and Payment" },
-  { icon: "mdi-google-maps", title: "My Location" },
-  { icon: "mdi-calendar", title: "My Schedule" },
-  { icon: "mdi-cog-outline", title: "Settings" },
-  { icon: "mdi-logout", title: "Logout" },
+  // { icon: "mdi-lock-outline", title: "Privacy & Settings" },
+  // { icon: "mdi-database", title: "Personal Data" },
+  // { icon: "mdi-email-sync", title: "Email and Payment" },
+  // { icon: "mdi-google-maps", title: "My Location" },
+  // { icon: "mdi-calendar", title: "My Schedule" },
+  // { icon: "mdi-cog-outline", title: "Settings" },
+  { icon: "mdi-logout", title: "Logout",},
 ];
 export default {
   setup() {
@@ -60,7 +66,16 @@ export default {
     const email = ref("");
     const auth = getAuth();
     const user = auth.currentUser;
+    const router = useRouter();
+    const $q = useQuasar();
 
+    function signOut() {
+      console.log('hello boy');
+      auth.signOut()
+      router.push("/").then(() => {
+        $q.notify({ message: "Sign Out Success", position:"top-right", color:"accent" });
+      });
+    }
     onMounted(() => {
       if (user) {
         email.value = user.email;
@@ -70,7 +85,8 @@ export default {
     });
     return {
       profileData,
-      email
+      email,
+      signOut,
     };
   },
 };

@@ -128,11 +128,13 @@ export default {
     function register() {
       createUserWithEmailAndPassword(auth, email.value, password.value)
         .then(() => {
-          $q.loading.show({
-            delay: 400, // ms
+          $q.notify({
+            message: "Sign Up  Successfully",
+            position: "top-right",
+            color: "accent",
           });
+
           console.log("Successfully registered!");
-          $q.loading.hide();
 
           router.push("/dashboard");
         })
