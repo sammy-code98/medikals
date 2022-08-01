@@ -92,7 +92,6 @@ export default {
   name: "MainLayout",
   components: { location, EventCard, FindTab },
   setup() {
-    const userName = ref("");
     const email = ref("");
     const auth = getAuth();
     const user = auth.currentUser;

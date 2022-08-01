@@ -9,9 +9,9 @@
     </div>
   </div>
   <div class="q-mt-sm">
-    <div class="text-center text-font text-grey-7 text-h6">John Doe</div>
+    <div class="text-center text-font text-grey-7 text-h6">{{email.split("@")[0]}}</div>
     <div class="text-center text-font text-accent text-subtitle1">
-      JohnDoe@gmail.com
+      {{ email }}
     </div>
   </div>
   <div>
@@ -39,6 +39,8 @@
 </template>
 
 <script>
+import { ref, onMounted } from "vue";
+import { getAuth } from "firebase/auth";
 import { useMeta } from "quasar";
 const metaData = {
   title: "Medicals || UserProfile",
@@ -55,8 +57,20 @@ const profileData = [
 export default {
   setup() {
     useMeta(metaData);
+    const email = ref("");
+    const auth = getAuth();
+    const user = auth.currentUser;
+
+    onMounted(() => {
+      if (user) {
+        email.value = user.email;
+      } else {
+        console.log("no username");
+      }
+    });
     return {
       profileData,
+      email
     };
   },
 };
