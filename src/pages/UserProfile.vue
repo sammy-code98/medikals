@@ -9,9 +9,11 @@
     </div>
   </div>
   <div class="q-mt-sm">
-    <div class="text-center text-font text-grey-7 text-h6">John Doe</div>
+    <div class="text-center text-font text-grey-7 text-h6">
+      {{ email.split("@")[0] }}
+    </div>
     <div class="text-center text-font text-accent text-subtitle1">
-      JohnDoe@gmail.com
+      {{ email }}
     </div>
   </div>
   <div>
@@ -32,14 +34,24 @@
           }}</q-item-label>
         </q-item-section>
         <q-space />
-        <q-btn round flat color="accent" icon="mdi-chevron-right" />
+        <q-btn
+          round
+          flat
+          color="accent"
+          icon="mdi-chevron-right"
+        />
       </q-item>
     </q-card>
   </div>
 </template>
 
 <script>
+import { ref, onMounted } from "vue";
+import { getAuth } from "firebase/auth";
 import { useMeta } from "quasar";
+import { useRouter } from "vue-router";
+import { useQuasar } from "quasar";
+
 const metaData = {
   title: "Medicals || UserProfile",
 };
@@ -50,13 +62,39 @@ const profileData = [
   { icon: "mdi-google-maps", title: "My Location" },
   { icon: "mdi-calendar", title: "My Schedule" },
   { icon: "mdi-cog-outline", title: "Settings" },
-  { icon: "mdi-logout", title: "Logout" },
+  { icon: "mdi-logout", title: "Logout",  },
 ];
 export default {
   setup() {
     useMeta(metaData);
+    const email = ref("");
+    const auth = getAuth();
+    const user = auth.currentUser;
+    const router = useRouter();
+    const $q = useQuasar();
+
+    function signOut() {
+      console.log("hello boy");
+      auth.signOut();
+      router.push("/").then(() => {
+        $q.notify({
+          message: "Sign Out Success",
+          position: "top-right",
+          color: "accent",
+        });
+      });
+    }
+    onMounted(() => {
+      if (user) {
+        email.value = user.email;
+      } else {
+        console.log("no username");
+      }
+    });
     return {
       profileData,
+      email,
+      signOut,
     };
   },
 };

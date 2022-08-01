@@ -99,12 +99,12 @@ export default {
     function login() {
       signInWithEmailAndPassword(auth, email.value, password.value)
         .then(() => {
-          $q.loading.show({
-            delay: 400, // ms
+          $q.notify({
+            message: "Sign In  Successfully",
+            position: "top-right",
+            color: "accent",
           });
-
           console.log("Successfully logged in!");
-          $q.loading.hide();
 
           router.push("/dashboard");
         })
