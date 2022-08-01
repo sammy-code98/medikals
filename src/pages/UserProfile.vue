@@ -18,13 +18,12 @@
   </div>
   <div>
     <q-card
-    @click="signOut()"
       class="q-ma-md"
       flat
       v-for="profile in profileData"
       :key="profile.icon"
     >
-      <q-item v-ripple >
+      <q-item v-ripple>
         <q-item-section avatar>
           <q-btn round flat color="accent" :icon="profile.icon" />
         </q-item-section>
@@ -35,7 +34,12 @@
           }}</q-item-label>
         </q-item-section>
         <q-space />
-        <q-btn round flat color="accent" icon="mdi-chevron-right" />
+        <q-btn
+          round
+          flat
+          color="accent"
+          icon="mdi-chevron-right"
+        />
       </q-item>
     </q-card>
   </div>
@@ -52,13 +56,13 @@ const metaData = {
   title: "Medicals || UserProfile",
 };
 const profileData = [
-  // { icon: "mdi-lock-outline", title: "Privacy & Settings" },
-  // { icon: "mdi-database", title: "Personal Data" },
-  // { icon: "mdi-email-sync", title: "Email and Payment" },
-  // { icon: "mdi-google-maps", title: "My Location" },
-  // { icon: "mdi-calendar", title: "My Schedule" },
-  // { icon: "mdi-cog-outline", title: "Settings" },
-  { icon: "mdi-logout", title: "Logout",},
+  { icon: "mdi-lock-outline", title: "Privacy & Settings" },
+  { icon: "mdi-database", title: "Personal Data" },
+  { icon: "mdi-email-sync", title: "Email and Payment" },
+  { icon: "mdi-google-maps", title: "My Location" },
+  { icon: "mdi-calendar", title: "My Schedule" },
+  { icon: "mdi-cog-outline", title: "Settings" },
+  { icon: "mdi-logout", title: "Logout",  },
 ];
 export default {
   setup() {
@@ -70,10 +74,14 @@ export default {
     const $q = useQuasar();
 
     function signOut() {
-      console.log('hello boy');
-      auth.signOut()
+      console.log("hello boy");
+      auth.signOut();
       router.push("/").then(() => {
-        $q.notify({ message: "Sign Out Success", position:"top-right", color:"accent" });
+        $q.notify({
+          message: "Sign Out Success",
+          position: "top-right",
+          color: "accent",
+        });
       });
     }
     onMounted(() => {
