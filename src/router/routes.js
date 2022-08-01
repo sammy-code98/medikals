@@ -30,7 +30,7 @@ const routes = [
   },
   {
     path:"/account/forgot-password",
-    component:()=> import("src/layouts/AccountLayout.vue"),
+    component:()=> import("src/layouts/ForgotPassLayout.vue"),
     children:[{
       path:"",
       component:()=> import("pages/Accounts/ForgotPassword.vue")
