@@ -34,7 +34,7 @@
 import { useMeta } from "quasar";
 import messages from "../../data/messages";
 const metaData = {
-  title: "Medicals || Chats",
+  title: "Medikals || Chats",
 };
 
 export default {

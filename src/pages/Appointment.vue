@@ -8,7 +8,7 @@ import EventCard from "../components/EventCard.vue";
 import eventData from "../data/eventData";
 import { useMeta } from "quasar";
 const metaData = {
-  title: "Medicals || Appointments",
+  title: "Medikals || Appointments",
 };
 export default {
   components: { EventCard },

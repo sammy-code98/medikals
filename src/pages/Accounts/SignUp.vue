@@ -114,7 +114,7 @@ import { useRouter } from "vue-router";
 import { useMeta, useQuasar } from "quasar";
 
 const metaData = {
-  title: "Medicals || Sign Up",
+  title: "Medikals || Sign Up",
 };
 
 export default {

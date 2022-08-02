@@ -53,7 +53,7 @@ import { useRouter } from "vue-router";
 import { useQuasar } from "quasar";
 
 const metaData = {
-  title: "Medicals || UserProfile",
+  title: "Medikals || UserProfile",
 };
 const profileData = [
   { icon: "mdi-lock-outline", title: "Privacy & Settings" },
