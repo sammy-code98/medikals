@@ -6,9 +6,11 @@
         <q-space />
         <span class="text-accent text-h6 text-font">{{ $route.name }}</span>
         <q-space />
-        <q-avatar rounded class="q-mx-sm">
-          <img src="https://cdn.quasar.dev/img/avatar.png" />
-        </q-avatar>
+        <router-link to="/profile">
+          <q-avatar rounded class="q-mx-sm">
+            <img src="https://cdn.quasar.dev/img/avatar.png" />
+          </q-avatar>
+        </router-link>
       </q-toolbar>
     </q-header>
 
