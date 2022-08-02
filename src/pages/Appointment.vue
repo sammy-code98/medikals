@@ -4,29 +4,8 @@
   </div>
 </template>
 <script>
-const eventData = [
-  {
-    name: "Dr. Emma Uchewa",
-    field: "Dentist",
-    date: "Mon,Jan 02, 22 01:23pm-5:00pm",
-  },
-  {
-    name: "Dr. Emma Uchewa",
-    field: "Dentist",
-    date: "Mon,Jan 02, 22 01:23pm-5:00pm",
-  },
-  {
-    name: "Dr. Emma Uchewa",
-    field: "Dentist",
-    date: "Mon,Jan 02, 22 01:23pm-5:00pm",
-  },
-  {
-    name: "Dr. Emma Uchewa",
-    field: "Dentist",
-    date: "Mon,Jan 02, 22 01:23pm-5:00pm",
-  },
-];
 import EventCard from "../components/EventCard.vue";
+import eventData from "../data/eventData";
 import { useMeta } from "quasar";
 const metaData = {
   title: "Medicals || Appointments",

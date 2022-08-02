@@ -8,9 +8,10 @@
             src="https://cdn.quasar.dev/img/boy-avatar.png"
           />
         </q-card-section>
-        <q-card-section>
-          <div class="row justify-between no-wrap">
-            <div class="col-auto q-mt-md">
+        <q-card-section class="row justify-between q-gutter-x-md no-wrap">
+
+          <div class="row q-gutter-x-sm no-wrap">
+            <div class="col">
               <div class="text-h6 text-font text-accent">
                 {{ name }}
               </div>
@@ -19,7 +20,7 @@
               </div>
             </div>
 
-            <div class="q-mx-xs">
+            <div class="col-auto  vidoe-icon">
               <q-btn
                 color="white"
                 dense
@@ -59,5 +60,10 @@ export default {
 <style lang="scss" scoped>
 .border {
   border-radius: 8px;
+}
+.vidoe-icon{
+  // transform: translateX(-40px);
+  float: right;
+  // margin-right: 30px;
 }
 </style>
