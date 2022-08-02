@@ -140,9 +140,10 @@ module.exports = configure(function (ctx) {
       },
 
       manifest: {
-        name: `Quasar App`,
-        short_name: `Quasar App`,
-        description: `A Quasar Framework app`,
+        name: `Medikals`,
+        short_name: `Medikals`,
+        description: `A doctor-patient app that allows patients book appointments
+         and have meetings with doctors online via video call or through chat.`,
         display: "standalone",
         orientation: "portrait",
         background_color: "#ffffff",
