@@ -1,5 +1,4 @@
 let searchResult;
-
 export default searchResult = [
   { name: "Dr. Emma Uchewa", field: "Gynecologist" },
   { name: "Dr. Daniel Emeka", field: "Dentist" },
