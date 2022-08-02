@@ -111,7 +111,7 @@ import {
   GoogleAuthProvider,
 } from "firebase/auth";
 import { useRouter } from "vue-router";
-import { useMeta } from "quasar";
+import { useMeta , useQuasar} from "quasar";
 const metaData = {
   title: "Medicals || Sign Up",
 };
@@ -124,6 +124,7 @@ export default {
     const date = ref("");
     const router = useRouter();
     const auth = getAuth();
+    const $q = useQuasar()
 
     function register() {
       createUserWithEmailAndPassword(auth, email.value, password.value)
@@ -136,7 +137,7 @@ export default {
 
           console.log("Successfully registered!");
 
-          router.push("/dashboard");
+          router.push("/account/signin");
         })
         .catch((error) => {
           const errorCode = error.code;
