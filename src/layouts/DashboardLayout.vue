@@ -44,16 +44,16 @@
           Hi <span class="text-h5 text-accent">{{ email.split("@")[0] }} </span> !👋
         </div>
         <div class="q-mx-md text-font text-grey-7 text-h4">
-          Keep taking care of your health
+          Keep taking care of  your health
         </div>
       </div>
       <div class="row justify-between q-pa-md">
-        <div class="text-accent text-font text-h6 text-weight-thin">
+        <div class="text-accent text-font text-h6 text-weight-medium">
           Upcoming Appointments
         </div>
         <router-link to="/appointments">
           <div
-            class="text-primary text-font text-weight-bold cursor-pointer q-mt-sm"
+            class="text-accent text-font  text-weight-medium cursor-pointer q-mt-sm"
           >
             See all
           </div>
@@ -62,7 +62,7 @@
       <EventCard v-bind="eventData" />
 
       <div class="row justify-between q-pa-md">
-        <div class="text-accent text-font text-h6 text-weight-thin q-mt-md">
+        <div class="text-accent text-font text-h6 text-weight-medium q-mt-md">
           Let's find you a doctor
         </div>
         <div class="q-mt-sm">

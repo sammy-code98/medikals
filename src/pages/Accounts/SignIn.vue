@@ -78,7 +78,7 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, onBeforeUnmount } from "vue";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "vue-router";
 import { useMeta, useQuasar } from "quasar";
@@ -96,9 +96,30 @@ export default {
     const errMsg = ref("");
     const $q = useQuasar();
 
+    // loader
+    let timer;
+    onBeforeUnmount(() => {
+      if (timer !== void 0) {
+        clearTimeout(timer);
+        $q.loading.hide();
+      }
+    });
+
+    function showLoading() {
+      $q.loading.show({
+        message: "Sign In  in progress. Hang on...",
+      });
+      // hide in 3s
+      timer = setTimeout(() => {
+        $q.loading.hide();
+        timer = void 0;
+      }, 5000);
+    }
+
     function login() {
       signInWithEmailAndPassword(auth, email.value, password.value)
         .then(() => {
+          showLoading();
           $q.notify({
             message: "Sign In  Successfully",
             position: "top-right",
@@ -132,6 +153,7 @@ export default {
       errMsg,
       isPwd: ref(true),
       login,
+      showLoading,
     };
   },
 };
