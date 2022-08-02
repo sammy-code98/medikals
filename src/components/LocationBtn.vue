@@ -1,6 +1,5 @@
 <template>
   <div>
-    <span class="text-accent q-mt-sm text-subtitle1  text-font">Location</span>
     <q-select
       dense
       borderless
