@@ -23,22 +23,11 @@
 </template>
 <script>
 import { useRoute } from "vue-router";
-const specialities = [
-  { title: "Gynecologist" },
-  { title: "Cardiologists" },
-  { title: "Pediatricians " },
-  { title: "Dentists" },
-  { title: "Radiologists" },
-  { title: "Neurologists" },
-  { title: "Obstetricians" },
-  { title: "Psychiatrist" },
-  { title: "Anesthesiologists" },
-  { title: "Psychologist" },
-  { title: "Psychiatrist" },
-];
+import specialities from "../data/specialities";
 export default {
   setup() {
     const route = useRoute();
+
 
     function getCurrentSpec(spec) {
       if (route.params.speciality && specialities) {

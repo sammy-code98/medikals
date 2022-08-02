@@ -8,9 +8,11 @@
           <location />
         </div>
         <q-space />
-        <q-avatar rounded class="q-mx-sm">
-          <img src="https://cdn.quasar.dev/img/avatar.png" />
-        </q-avatar>
+        <router-link to="/profile">
+          <q-avatar rounded class="q-mx-sm">
+            <img src="https://cdn.quasar.dev/img/avatar.png" />
+          </q-avatar>
+        </router-link>
       </q-toolbar>
     </q-header>
 
@@ -41,10 +43,12 @@
     <q-page-container>
       <div>
         <div class="q-mx-md q-mt-sm text-font text-grey-7 text-h6">
-          Hi <span class="text-h5 text-accent">{{ email.split("@")[0] }} </span> !👋
+          Hi
+          <span class="text-h5 text-accent">{{ email.split("@")[0] }} </span>
+          !👋
         </div>
         <div class="q-mx-md text-font text-grey-7 text-h4">
-          Keep taking care of  your health
+          Keep taking care of your health
         </div>
       </div>
       <div class="row justify-between q-pa-md">
@@ -53,7 +57,7 @@
         </div>
         <router-link to="/appointments">
           <div
-            class="text-accent text-font  text-weight-medium cursor-pointer q-mt-sm"
+            class="text-accent text-font text-weight-medium cursor-pointer q-mt-sm"
           >
             See all
           </div>
