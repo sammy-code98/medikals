@@ -84,7 +84,7 @@ import { useRouter } from "vue-router";
 import { useMeta, useQuasar } from "quasar";
 
 const metaData = {
-  title: "Medicals || Sign In",
+  title: "Medikals || Sign In",
 };
 export default {
   setup() {

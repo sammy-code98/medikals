@@ -34,7 +34,7 @@
 import { useMeta } from "quasar";
 
 const metaData = {
-  title: "Medicals ",
+  title: "Medikals ",
 };
 export default {
   name: "PageIndex",

@@ -28,7 +28,7 @@
 <script>
 import { useMeta} from "quasar"
 const metaData = {
-  title:"Medicals || 404"
+  title:"Medikals || 404"
 }
 export default {
   name: "Error404",

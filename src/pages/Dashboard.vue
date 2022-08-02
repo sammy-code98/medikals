@@ -7,7 +7,7 @@
 import { useMeta } from "quasar";
 import DocCard from "./Doctors/_Index.vue";
 const metaData = {
-  title: "Medicals || Home",
+  title: "Medikals || Home",
 };
 export default {
   components: {

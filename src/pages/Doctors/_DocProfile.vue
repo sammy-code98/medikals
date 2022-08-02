@@ -86,7 +86,7 @@ import { useRoute } from "vue-router";
 import { ref, onMounted, watchEffect } from "vue";
 import {useMeta} from "quasar"
 const metaData = {
-  title: "Medicals || DocProfile"
+  title: "Medikals || DocProfile"
 }
 export default {
   setup() {

@@ -58,7 +58,7 @@ import { useRoute } from "vue-router";
 import SearchNotFound from "../components/SearchNotFound.vue";
 import searchResult from "../data/searchResult";
 const metaData = {
-  title: "Medicals || Search Results",
+  title: "Medikals || Search Results",
 };
 
 let mySearch = ref("");
