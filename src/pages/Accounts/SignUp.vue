@@ -103,7 +103,7 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref,onBeforeUnmount } from "vue";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -111,10 +111,12 @@ import {
   GoogleAuthProvider,
 } from "firebase/auth";
 import { useRouter } from "vue-router";
-import { useMeta , useQuasar} from "quasar";
+import { useMeta, useQuasar } from "quasar";
+
 const metaData = {
   title: "Medicals || Sign Up",
 };
+
 export default {
   setup() {
     useMeta(metaData);
@@ -124,11 +126,32 @@ export default {
     const date = ref("");
     const router = useRouter();
     const auth = getAuth();
-    const $q = useQuasar()
+    const $q = useQuasar();
+
+    // loader
+    let timer;
+    onBeforeUnmount(() => {
+      if (timer !== void 0) {
+        clearTimeout(timer);
+        $q.loading.hide();
+      }
+    });
+
+    function showLoading() {
+      $q.loading.show({
+        message: "Signing up  in progress. Hang on...",
+      });
+      // hide in 3s
+      timer = setTimeout(() => {
+        $q.loading.hide();
+        timer = void 0;
+      }, 5000);
+    }
 
     function register() {
       createUserWithEmailAndPassword(auth, email.value, password.value)
         .then(() => {
+          showLoading();
           $q.notify({
             message: "Sign Up  Successfully",
             position: "top-right",
@@ -177,6 +200,7 @@ export default {
       date,
       register,
       registerWithGoogle,
+      showLoading,
       isPwd: ref(true),
     };
   },
