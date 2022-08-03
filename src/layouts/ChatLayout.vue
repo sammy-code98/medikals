@@ -6,7 +6,7 @@
           flat
           round
           dense
-          icon="mdi-less-than"
+          icon="chevron_left"
           color="grey-7"
           to="/chats"
         />
@@ -41,8 +41,8 @@
           outlined
           rounded
           dense
-          autogrow
           v-model="newText"
+          max
           placeholder="Type your message"
         >
           <template v-slot:before>

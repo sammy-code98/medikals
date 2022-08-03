@@ -1,6 +1,6 @@
 <template>
   <div class="q-pa-md">
-    <q-card class="border" flat bordered>
+    <q-card class="border full-width" flat bordered>
       <q-card-section horizontal>
         <q-card-section class="col-3 flex flex-center">
           <q-img
@@ -8,28 +8,25 @@
             src="https://cdn.quasar.dev/img/boy-avatar.png"
           />
         </q-card-section>
-        <q-card-section class="row justify-between q-gutter-x-md no-wrap">
-
-          <div class="row q-gutter-x-sm no-wrap">
-            <div class="col">
+        <q-card-section>
               <div class="text-h6 text-font text-accent">
                 {{ name }}
               </div>
               <div class="text-subtitle2 text-font text-accent">
                 {{ field }}
               </div>
-            </div>
 
-            <div class="col-auto  vidoe-icon">
+            <div class="col-auto vidoe-icon">
               <q-btn
                 color="white"
                 dense
                 text-color="accent"
                 round
                 icon="mdi-video-outline"
+                class="absolute"
+                style="bottom: 20px; left: 213px; transform: translateY(-50%)"
               />
             </div>
-          </div>
         </q-card-section>
       </q-card-section>
       <q-card-section>
@@ -61,7 +58,7 @@ export default {
 .border {
   border-radius: 8px;
 }
-.vidoe-icon{
+.vidoe-icon {
   // transform: translateX(-40px);
   float: right;
   // margin-right: 30px;

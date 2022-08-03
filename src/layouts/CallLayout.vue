@@ -1,5 +1,21 @@
 <template>
   <q-layout view="hHh lpR fFf">
+    <q-header class="bg-white">
+      <q-toolbar>
+        <q-btn
+          flat
+          round
+          dense
+          icon="chevron_left"
+          color="grey-7"
+          to="/chats"
+        />
+        <q-space />
+        <span class="text-accent text-h6 text-font">{{ $route.name }}</span>
+        <q-space />
+        <q-btn flat round dense icon="mdi-dots-vertical" color="grey-7" />
+      </q-toolbar>
+    </q-header>
     <q-page-container>
       <router-view />
     </q-page-container>

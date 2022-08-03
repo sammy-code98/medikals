@@ -34,17 +34,17 @@
       </div>
     </div>
   </div>
-  <div class="text-h5 text-font q-mx-md">About Doctor</div>
+  <div class="text-h5 text-font q-mx-md q-mt-md">About Doctor</div>
   <div class="text-font text-subtitle1 text-grey-7 q-mx-md">
     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum quis fugiat
     nihil ipsa ipsam itaque rem laboriosam maiores quasi soluta amet, facere
     earum, doloribus reprehenderit nulla nostrum. Iusto, nostrum totam.
   </div>
-  <div class="text-h5 text-font q-mx-md q-mt-sm">Working time</div>
-  <div class="text-font text-subtitle1 text-grey-7 q-mx-md">
+  <div class="text-h5 text-font q-mx-md q-mt-md">Working time</div>
+  <div class="text-font text-subtitle1 text-grey-7 q-mx-md q-mt-sm">
     Monday - Friday (8:00am to 4:30pm)
   </div>
-  <div class="text-h5 text-font q-mx-md q-mt-sm">Communication</div>
+  <div class="text-h5 text-font q-mx-md q-mt-md">Communication</div>
   <div class="q-px-md">
     <div class="row q-mt-sm">
       <q-btn
