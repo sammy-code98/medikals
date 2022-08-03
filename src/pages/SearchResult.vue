@@ -1,19 +1,21 @@
 <template>
   <div>
     <div class="q-pa-md">
-      <q-input
-        v-model="mySearch"
-        round
-        dense
-        outlined
-        type="search"
-        placeholder="Search a doctor or nurse"
-        class="text-font text-subtitle1 shadow-4"
-      >
-        <template v-slot:prepend>
-          <q-icon name="search" class="text-primary" />
-        </template>
-      </q-input>
+      <q-card  class="shadow-1">
+        <q-input
+          v-model="mySearch"
+          round
+          dense
+          outlined
+          type="search"
+          placeholder="Search a doctor or nurse"
+          class="text-font text-subtitle1"
+        >
+          <template v-slot:prepend>
+            <q-icon name="search" class="text-primary" />
+          </template>
+        </q-input>
+      </q-card>
     </div>
     <div class="row q-pa-md">
       <div

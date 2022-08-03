@@ -41,8 +41,8 @@
           outlined
           rounded
           dense
-          autogrow
           v-model="newText"
+          max
           placeholder="Type your message"
         >
           <template v-slot:before>
