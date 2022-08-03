@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="q-pa-md">
-      <q-card  class="shadow-1">
+      <q-card class="shadow-1">
         <q-input
           v-model="mySearch"
           round
@@ -23,7 +23,7 @@
         :key="search.name"
         class="col-6 q-pa-sm"
       >
-        <router-link :to="`/doctor/${specTitle}/${search.name}`">
+        <router-link :to="`/doctor/${search.field}/${search.name}`">
           <q-card class="my-card">
             <q-card-section class="row justify-center">
               <q-avatar size="80px">
@@ -77,6 +77,13 @@ export default {
       specTitle.value = route.params.speciality;
     }
 
+    onMounted(() => {
+      getSpecTitle();
+    });
+
+    // watch for changes
+    watchEffect(() => getSpecTitle());
+
     function filteredSearch() {
       return searchResult.filter((search) => {
         return (
@@ -85,13 +92,6 @@ export default {
         );
       });
     }
-
-    onMounted(() => {
-      getSpecTitle();
-    });
-
-    // watch for changes
-    watchEffect(() => getSpecTitle());
 
     return {
       searchResult,
