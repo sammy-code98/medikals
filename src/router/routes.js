@@ -105,7 +105,7 @@ const routes = [
       {
         path: "",
         component: () => import("pages/UserProfile.vue"),
-        name: "My Profile",
+        name: "Profile",
       },
     ],
   },
