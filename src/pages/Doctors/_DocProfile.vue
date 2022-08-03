@@ -1,5 +1,5 @@
 <template>
-  <div class="row q-pa-md">
+  <div class="row q-pa-md ">
     <div class="col-5">
       <q-img
         src="https://cdn.quasar.dev/img/boy-avatar.png"
