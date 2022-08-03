@@ -63,7 +63,12 @@
               dense
               type="submit"
               color="accent"
-            />
+              :loading="submitting"
+            >
+              <template v-slot:loading>
+                <q-spinner-facebook />
+              </template>
+            </q-btn>
           </div>
         </q-form>
       </q-card>
@@ -95,6 +100,7 @@ export default {
     const auth = getAuth();
     const errMsg = ref("");
     const $q = useQuasar();
+    const submitting = ref(false);
 
     // loader
     let timer;
@@ -119,6 +125,12 @@ export default {
     function login() {
       signInWithEmailAndPassword(auth, email.value, password.value)
         .then(() => {
+          submitting.value = true;
+          setTimeout(() => {
+            // delay simulated, we are done,
+            // now restoring submit to its initial state
+            submitting.value = false;
+          }, 5000);
           showLoading();
           $q.notify({
             message: "Sign In  Successfully",
@@ -154,6 +166,7 @@ export default {
       isPwd: ref(true),
       login,
       showLoading,
+      submitting
     };
   },
 };

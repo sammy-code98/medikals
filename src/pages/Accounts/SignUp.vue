@@ -103,7 +103,7 @@
 </template>
 
 <script>
-import { ref,onBeforeUnmount } from "vue";
+import { ref, onBeforeUnmount } from "vue";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -127,6 +127,7 @@ export default {
     const router = useRouter();
     const auth = getAuth();
     const $q = useQuasar();
+    const submitting = ref(false);
 
     // loader
     let timer;
@@ -151,6 +152,12 @@ export default {
     function register() {
       createUserWithEmailAndPassword(auth, email.value, password.value)
         .then(() => {
+          submitting.value = true;
+          setTimeout(() => {
+            // delay simulated, we are done,
+            // now restoring submit to its initial state
+            submitting.value = false;
+          }, 5000);
           showLoading();
           $q.notify({
             message: "Sign Up  Successfully",
@@ -202,6 +209,7 @@ export default {
       registerWithGoogle,
       showLoading,
       isPwd: ref(true),
+      submitting
     };
   },
 };
