@@ -152,6 +152,7 @@ export default {
     function register() {
       createUserWithEmailAndPassword(auth, email.value, password.value)
         .then(() => {
+          // btn loading state
           submitting.value = true;
           setTimeout(() => {
             // delay simulated, we are done,

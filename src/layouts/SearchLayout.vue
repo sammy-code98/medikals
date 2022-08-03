@@ -6,7 +6,7 @@
           flat
           round
           dense
-          icon="mdi-less-than"
+          icon="chevron_left"
           color="grey-7"
           to="/dashboard"
         />

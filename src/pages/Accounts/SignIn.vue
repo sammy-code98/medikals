@@ -125,6 +125,8 @@ export default {
     function login() {
       signInWithEmailAndPassword(auth, email.value, password.value)
         .then(() => {
+          // btn loading state
+
           submitting.value = true;
           setTimeout(() => {
             // delay simulated, we are done,
@@ -166,7 +168,7 @@ export default {
       isPwd: ref(true),
       login,
       showLoading,
-      submitting
+      submitting,
     };
   },
 };
