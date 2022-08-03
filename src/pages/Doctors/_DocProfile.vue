@@ -1,5 +1,5 @@
 <template>
-  <div class="row q-pa-md ">
+  <div class="row q-pa-md">
     <div class="col-5">
       <q-img
         src="https://cdn.quasar.dev/img/boy-avatar.png"
@@ -36,6 +36,8 @@
   </div>
   <div class="text-h5 text-font q-mx-md q-mt-md">About Doctor</div>
   <div class="text-font text-subtitle1 text-grey-7 q-mx-md">
+    {{ name }}, is a seasoned {{ field }} with over
+    {{ Math.floor(Math.random() * 10) + 2 }} years experience in the field .
     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum quis fugiat
     nihil ipsa ipsam itaque rem laboriosam maiores quasi soluta amet, facere
     earum, doloribus reprehenderit nulla nostrum. Iusto, nostrum totam.
@@ -84,13 +86,13 @@
 <script>
 import { useRoute } from "vue-router";
 import { ref, onMounted, watchEffect } from "vue";
-import {useMeta} from "quasar"
+import { useMeta } from "quasar";
 const metaData = {
-  title: "Medikals || DocProfile"
-}
+  title: "Medikals || DocProfile",
+};
 export default {
   setup() {
-    useMeta(metaData)
+    useMeta(metaData);
     const route = useRoute();
     let field = ref("");
     let name = ref("");
