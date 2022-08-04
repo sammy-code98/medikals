@@ -15,29 +15,30 @@
         <q-btn text-color="yellow" flat round icon="mdi-star" />
         <div class="q-mx-md">
           <div class="text-font text-grey-7 text-subtitle2">Rating</div>
-          <div class="text-font text-accent text-subtitle1">5.0 out of 5</div>
+          <div class="text-font text-accent text-subtitle1">{{ Math.floor(Math.random() * 5) + 1 }}.0 out of 5</div>
         </div>
       </div>
       <div class="row q-mt-sm">
         <q-btn text-color="primary" flat round icon="mdi-hospital-building" />
         <div class="q-mx-md">
           <div class="text-font text-grey-7 text-subtitle2">Patients</div>
-          <div class="text-font text-accent text-subtitle1">2500</div>
+          <div class="text-font text-accent text-subtitle1">{{ Math.floor(Math.random() * 1000)  }}</div>
         </div>
       </div>
       <div class="row q-mt-sm">
         <q-btn text-color="accent" flat round icon="mdi-timeline" />
         <div class="q-mx-md">
           <div class="text-font text-grey-7 text-subtitle2">Experience</div>
-          <div class="text-font text-accent text-subtitle1">20 years</div>
+          <div class="text-font text-accent text-subtitle1">
+            {{ Math.floor(Math.random() * 10) + 2 }} years
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div class="text-h5 text-font q-mx-md q-mt-md">About Doctor</div>
   <div class="text-font text-subtitle1 text-grey-7 q-mx-md">
-    {{ name }}, is a seasoned {{ field }} with over
-    {{ Math.floor(Math.random() * 10) + 2 }} years experience in the field .
+    {{ name }}, is a seasoned {{ field }}
     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum quis fugiat
     nihil ipsa ipsam itaque rem laboriosam maiores quasi soluta amet, facere
     earum, doloribus reprehenderit nulla nostrum. Iusto, nostrum totam.

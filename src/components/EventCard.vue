@@ -16,7 +16,7 @@
                 {{ field }}
               </div>
 
-            <div class="col-auto vidoe-icon">
+            <div class="col-auto">
               <q-btn
                 color="white"
                 dense
@@ -24,7 +24,8 @@
                 round
                 icon="mdi-video-outline"
                 class="absolute"
-                style="bottom: 20px; left: 213px; transform: translateY(-50%)"
+                size="12px"
+                style="bottom: 30px; left: 208px; transform: translateY(-50%)"
               />
             </div>
         </q-card-section>
@@ -58,9 +59,5 @@ export default {
 .border {
   border-radius: 8px;
 }
-.vidoe-icon {
-  // transform: translateX(-40px);
-  float: right;
-  // margin-right: 30px;
-}
+
 </style>
