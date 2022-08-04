@@ -180,6 +180,10 @@ export default {
     function registerWithGoogle() {
       // init provider
       const provider = new GoogleAuthProvider();
+
+      //   this line is optional
+      provider.addScope("https://www.googleapis.com/auth/contacts.readonly");
+
       signInWithPopup(auth, provider)
         .then((result) => {
           // This gives you a Google Access Token. You can use it to access the Google API.
@@ -210,7 +214,7 @@ export default {
       registerWithGoogle,
       showLoading,
       isPwd: ref(true),
-      submitting
+      submitting,
     };
   },
 };

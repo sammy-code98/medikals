@@ -20,14 +20,16 @@
             </div>
           </div>
           <q-rating v-model="ratingModel" size="1em" :max="5" color="yellow" />
-          <span class="text-font text-grey-7 q-mx-md">5.0 | 2.5k Reviews</span>
+          <span class="text-font text-grey-7 q-mx-md"
+            >{{ Math.floor(Math.random() * 5) + 1 }}.0 | 2.5k Reviews</span
+          >
         </q-card-section>
       </q-card-section>
     </q-card>
   </div>
 </template>
 <script>
-import {useRoute} from 'vue-router';
+import { useRoute } from "vue-router";
 import { ref, onMounted, watchEffect } from "vue";
 export default {
   props: {
@@ -35,22 +37,21 @@ export default {
     // field: { type: String, required: true },
   },
   setup() {
-    const route = useRoute()
-    let field = ref("")
+    const route = useRoute();
+    let field = ref("");
 
     function getField() {
-      field.value = route.params.speciality
+      field.value = route.params.speciality;
     }
 
+    onMounted(() => {
+      getField();
+    });
 
-    onMounted(()=>{
-      getField()
-    })
-
-    watchEffect(() => getField())
+    watchEffect(() => getField());
     return {
       ratingModel: ref(5),
-      field
+      field,
     };
   },
 };
