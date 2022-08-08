@@ -16,7 +16,7 @@ const firebase = initializeApp(firebaseConfig);
 // get current user info
 const auth = getAuth()
 const getCurentUser = () => {
-  console.log('ok');
+  // console.log('ok');
   return auth.currentUser
 
 };

@@ -37,17 +37,17 @@ export default route(function (/* { store, ssrContext } */) {
   });
 
   const currentUser = getCurentUser();
-  console.log({ currentUser });
+  // console.log({ currentUser });
   Router.beforeEach((to, from, next) => {
     let isAuthenticated = to.matched.some((record) => {
-      console.log({ record });
+      // console.log({ record });
       return record.meta.authRequired;
     });
 
-    console.log({ currentUser: isAuthenticated });
+    // console.log({ currentUser: isAuthenticated });
     // isAuthenticated && !currentUser
     if (isAuthenticated && currentUser) {
-      console.log("ol");
+      // console.log("ol");
       next({ name: "Signin", query: { next: to.fullPath } });
     } else {
       next();

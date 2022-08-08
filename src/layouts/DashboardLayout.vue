@@ -104,7 +104,7 @@ export default {
       if (user) {
         email.value = user.email;
       } else {
-        console.log("no username");
+        // console.log("no username");
       }
     });
 
