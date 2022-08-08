@@ -1,10 +1,10 @@
 <template>
   <div class="q-pa-md relative-position">
-      <div class="inner-circle">
-        <q-avatar size="150px" class="q-ma-lg">
-          <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
-        </q-avatar>
-      </div>
+    <div class="inner-circle">
+      <q-avatar size="150px" class="q-ma-lg">
+        <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
+      </q-avatar>
+    </div>
   </div>
   <div class="q-mt-sm">
     <div class="text-center text-font text-grey-7 text-h6">
@@ -15,11 +15,7 @@
     </div>
   </div>
   <div>
-    <q-card
-      flat
-      v-for="profile in profileData"
-      :key="profile.icon"
-    >
+    <div flat v-for="profile in profileData" :key="profile.icon">
       <q-item v-ripple>
         <q-item-section avatar>
           <q-btn round flat color="accent" :icon="profile.icon" />
@@ -31,14 +27,22 @@
           }}</q-item-label>
         </q-item-section>
         <q-space />
-        <q-btn
-          round
-          flat
-          color="accent"
-          icon="mdi-chevron-right"
-        />
+        <q-btn round flat color="accent" icon="mdi-chevron-right" />
       </q-item>
-    </q-card>
+    </div>
+    <q-item v-ripple>
+      <q-item-section avatar>
+        <q-btn round flat color="accent" icon="mdi-logout" />
+      </q-item-section>
+
+      <q-item-section @click="signOut">
+        <q-item-label class="text-font text-grey-7 q-mx-md text-subtitle1"
+          >Logout</q-item-label
+        >
+      </q-item-section>
+      <q-space />
+      <q-btn round flat color="accent" icon="mdi-chevron-right" />
+    </q-item>
   </div>
 </template>
 
@@ -59,7 +63,6 @@ const profileData = [
   { icon: "mdi-google-maps", title: "My Location" },
   { icon: "mdi-calendar", title: "My Schedule" },
   { icon: "mdi-cog-outline", title: "Settings" },
-  { icon: "mdi-logout", title: "Logout",  },
 ];
 export default {
   setup() {
@@ -71,7 +74,6 @@ export default {
     const $q = useQuasar();
 
     function signOut() {
-      console.log("hello boy");
       auth.signOut();
       router.push("/").then(() => {
         $q.notify({
@@ -81,6 +83,7 @@ export default {
         });
       });
     }
+
     onMounted(() => {
       if (user) {
         email.value = user.email;
@@ -98,7 +101,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 .inner-circle {
   height: 200px;
   width: 200px;
