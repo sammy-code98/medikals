@@ -18,12 +18,13 @@
 import { useRoute } from "vue-router";
 import { ref, onMounted, watchEffect } from "vue";
 import DoctorCard from "../../components/DoctorCard.vue";
-const appointment = [
+let appointment = [
   { name: "Dr. Emma Uchewa" },
   { name: "Dr. Nze Chimdi" },
   { name: "Dr. Peculiar Chidinma" },
   { name: "Dr. George I" },
 ];
+
 export default {
   components: { DoctorCard },
   setup() {
@@ -34,17 +35,25 @@ export default {
     function getSpecTitle() {
       specTitle.value = route.params.speciality;
     }
+    function shuffledAppointment() {
+      appointment.sort(() => Math.random() - 0.5);
+    }
 
     onMounted(() => {
       getSpecTitle();
+      shuffledAppointment();
     });
 
     // watch for changes
-    watchEffect(() => getSpecTitle());
+    watchEffect(() => {
+      getSpecTitle();
+      shuffledAppointment();
+    });
 
     return {
       appointment,
       specTitle,
+      shuffledAppointment,
     };
   },
 };
