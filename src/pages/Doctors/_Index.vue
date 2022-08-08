@@ -35,6 +35,7 @@ export default {
     function getSpecTitle() {
       specTitle.value = route.params.speciality;
     }
+    // shuffle doc cards
     function shuffledAppointment() {
       appointment.sort(() => Math.random() - 0.5);
     }
