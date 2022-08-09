@@ -1,9 +1,3 @@
-[build]
-  command = "npm run build"
-  publish="dist"
-  base = ""
-  # The base directory should be the path to the nested Vue project
-
 
 [[redirects]]
   from = "/*"
