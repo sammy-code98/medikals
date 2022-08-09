@@ -1,7 +1,7 @@
 [build]
   command = "npm run build"
   publish="dist"
-  base = "medics/"
+  base = "medikals/"
   # The base directory should be the path to the nested Vue project
 
 
