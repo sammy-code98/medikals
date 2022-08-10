@@ -25,6 +25,9 @@
     "eslint-plugin-vue": "^7.0.0",
     "eslint-webpack-plugin": "^2.4.0"
   },
+  "scripts":{
+    "build": "quasar build"
+  },
   "browserslist": [
     "last 10 Chrome versions",
     "last 10 Firefox versions",
