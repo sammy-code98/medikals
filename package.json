@@ -26,7 +26,7 @@
     "eslint-webpack-plugin": "^2.4.0"
   },
   "scripts":{
-    "build": "quasar build"
+    "build": "quasar build && quasar serve --history"
   },
   "browserslist": [
     "last 10 Chrome versions",
