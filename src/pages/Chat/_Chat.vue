@@ -4,7 +4,7 @@
       <q-chat-message
         name="me"
         avatar="https://cdn.quasar.dev/img/avatar3.jpg"
-        :text="['hey, how are you?']"
+        :text="['Greetings Dr.','hey, how are you?']"
         stamp="7 minutes ago"
         sent
         bg-color="amber-7"

@@ -44,6 +44,7 @@
           v-model="newText"
           max
           placeholder="Type your message"
+          @keyup.enter="createNewText()"
         >
           <template v-slot:before>
             <q-icon name="mdi-plus" color="accent" />
@@ -56,6 +57,7 @@
               icon="send"
               color="primary"
               :disable="!newText"
+              @click="createNewText"
             />
           </template>
         </q-input>
@@ -81,14 +83,20 @@ export default {
     function getHeader() {
       msgHeader = route.params.private;
     }
+
+    function createNewText() {
+      console.log("create new text");
+    }
     onMounted(() => {
       getHeader();
     });
 
     watchEffect(() => getHeader());
+
     return {
       newText,
       msgHeader,
+      createNewText,
     };
   },
 };
