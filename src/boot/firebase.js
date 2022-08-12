@@ -16,7 +16,7 @@ const firebase = initializeApp(firebaseConfig);
 
 // connect firebase db
 
-const db = getFirestore(app);
+const db = getFirestore(firebase);
 
 // get current user info
 

@@ -73,20 +73,36 @@
 <script>
 import { useRoute } from "vue-router";
 import { ref, onMounted, watchEffect } from "vue";
+import { db } from "src/boot/firebase";
+import { getAuth } from "firebase/auth";
+
+import {
+  collection,
+  addDoc,
+  orderBy,
+  query,
+  onSnapshot,
+} from "firebase/firestore";
 export default {
   name: "MainLayout",
   setup() {
     const newText = ref("");
     const route = useRoute();
     let msgHeader = ref("");
+    let authUser = ref({});
 
     function getHeader() {
       msgHeader = route.params.private;
     }
 
-    function createNewText() {
-      console.log("create new text");
+    async function createNewText() {
+      const docRef = await addDoc(collection(db, "chats"), {
+        content: newText.value,
+        date: new Date(),
+      });
+      newText.value = "";
     }
+
     onMounted(() => {
       getHeader();
     });
@@ -97,6 +113,7 @@ export default {
       newText,
       msgHeader,
       createNewText,
+      authUser,
     };
   },
 };
