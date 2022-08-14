@@ -9,12 +9,12 @@
     "lint": "eslint --ext .js,.vue ./",
     "test": "echo \"No test specified\" && exit 0",
     "build": "quasar build"
-
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "date-fns": "^2.29.1",
     "firebase": "^9.9.1",
     "quasar": "^2.0.0",
     "vuex": "^4.0.1"
@@ -27,7 +27,6 @@
     "eslint-plugin-vue": "^7.0.0",
     "eslint-webpack-plugin": "^2.4.0"
   },
-
   "browserslist": [
     "last 10 Chrome versions",
     "last 10 Firefox versions",
