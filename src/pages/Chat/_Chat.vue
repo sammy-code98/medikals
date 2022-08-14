@@ -34,8 +34,8 @@
       <q-chat-message
         :name="drName"
         avatar="https://cdn.quasar.dev/img/avatar5.jpg"
-        :text="allTexts"
-        stamp="1 minutes ago"
+        :text="[contents]"
+        :stamp="date"
         size="8"
         text-color="white"
         bg-color="accent"
@@ -49,37 +49,33 @@ import { useRoute } from "vue-router";
 
 import { ref, onMounted, watchEffect } from "vue";
 import { db } from "src/boot/firebase";
-import {
-  collection,
-  addDoc,
-  orderBy,
-  query,
-  onSnapshot,
-} from "firebase/firestore";
+import { collection, query, onSnapshot } from "firebase/firestore";
 
 export default {
   setup() {
     const route = useRoute();
     let drName = ref("");
-    const content = ref(null);
+    const contents = ref(null);
+    const allTexts = ref([]);
+    const date = ref(null)
 
     function getDrName() {
       drName = route.params.private;
     }
 
     async function getDbText() {
-      let allTexts = [];
       const q = query(collection(db, "chats"));
       onSnapshot(q, (snap) => {
         snap.forEach((doc) => {
-          allTexts.push({
+          allTexts.value.push({
             id: doc.id,
             content: doc.data().content,
-            // date: doc.data().date.toDate().toDateString(),
+            date: doc.data().date.toDate().toDateString(),
           });
         });
-        content.value = allTexts;
-        console.log(content);
+        contents.value = allTexts.value.map((item) => item.content);
+        date.value = allTexts.value.map(myDate => myDate.date)
+        // console.log(contents);
       });
     }
 
@@ -92,7 +88,9 @@ export default {
     return {
       drName,
       getDrName,
-      content,
+      contents,
+      allTexts,
+      date
     };
   },
 };
