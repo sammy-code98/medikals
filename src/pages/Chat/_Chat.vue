@@ -9,37 +9,18 @@
         sent
         bg-color="amber-7"
       />
-      <q-chat-message
-        :name="drName"
-        avatar="https://cdn.quasar.dev/img/avatar5.jpg"
-        :text="[
-          'doing fine, how r you?',
-          'I just feel like typing a really, really, REALLY long message to annoy you...',
-        ]"
-        size="6"
-        stamp="4 minutes ago"
-        text-color="white"
-        bg-color="accent"
-      />
-      <q-chat-message
-        :name="drName"
-        avatar="https://cdn.quasar.dev/img/avatar5.jpg"
-        :text="['Did it work?']"
-        stamp="1 minutes ago"
-        size="8"
-        text-color="white"
-        bg-color="accent"
-      />
 
-      <q-chat-message
-        :name="drName"
-        avatar="https://cdn.quasar.dev/img/avatar5.jpg"
-        :text="[contents]"
-        :stamp="convertTimeStamp(date)"
-        size="8"
-        text-color="white"
-        bg-color="accent"
-      />
+      <div v-for="content in allTexts" :key="content.id">
+        <q-chat-message
+          :name="drName"
+          avatar="https://cdn.quasar.dev/img/avatar5.jpg"
+          :text="[...contents]"
+          :stamp="content.date"
+          size="8"
+          text-color="white"
+          bg-color="accent"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -47,11 +28,10 @@
 <script>
 import { useRoute } from "vue-router";
 
-import { ref, onMounted, watchEffect } from "vue";
+import { ref, onMounted, watchEffect ,onUpdated} from "vue";
 import { db } from "src/boot/firebase";
 import { collection, query, onSnapshot } from "firebase/firestore";
 import { formatDistance } from "date-fns";
-
 
 export default {
   setup() {
@@ -59,7 +39,8 @@ export default {
     let drName = ref("");
     const contents = ref(null);
     const allTexts = ref([]);
-    const date = ref(null);
+    const date = ref();
+    const content = ref(null)
 
     function getDrName() {
       drName = route.params.private;
@@ -78,7 +59,7 @@ export default {
             id: doc.id,
             content: doc.data().content,
             // date: doc.data().date.toDate().toDateString(),
-            date: Date.now(),
+            date: convertTimeStamp(Date.now()),
           });
         });
         contents.value = allTexts.value.map((item) => item.content);
@@ -92,6 +73,7 @@ export default {
       getDbText();
     });
 
+
     watchEffect(() => getDrName());
     return {
       drName,
@@ -100,6 +82,7 @@ export default {
       allTexts,
       date,
       convertTimeStamp,
+      content
     };
   },
 };
