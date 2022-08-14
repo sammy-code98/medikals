@@ -2,25 +2,25 @@
   <div class="q-pa-md row justify-center">
     <div style="width: 100%; max-width: 400px">
       <q-chat-message
-        name="me"
+        :name="drName"
         avatar="https://cdn.quasar.dev/img/avatar3.jpg"
-        :text="['Greetings Dr.', 'hey, how are you?']"
+        :text="['Greetings.', 'hey, how are you?']"
         stamp="7 minutes ago"
-        sent
         bg-color="amber-7"
       />
 
-      <div v-for="content in allTexts" :key="content.id">
-        <q-chat-message
-          :name="drName"
-          avatar="https://cdn.quasar.dev/img/avatar5.jpg"
-          :text="[...contents]"
-          :stamp="content.date"
-          size="8"
-          text-color="white"
-          bg-color="accent"
-        />
-      </div>
+      <q-chat-message
+        v-for="content in contents"
+        :key="content.id"
+        name="me"
+        avatar="https://cdn.quasar.dev/img/avatar5.jpg"
+        :text="[...contents]"
+        :stamp="[...date]"
+        size="8"
+        sent
+        text-color="white"
+        bg-color="accent"
+      />
     </div>
   </div>
 </template>
@@ -28,7 +28,7 @@
 <script>
 import { useRoute } from "vue-router";
 
-import { ref, onMounted, watchEffect ,onUpdated} from "vue";
+import { ref, onMounted, watchEffect, onCreated } from "vue";
 import { db } from "src/boot/firebase";
 import { collection, query, onSnapshot } from "firebase/firestore";
 import { formatDistance } from "date-fns";
@@ -40,7 +40,7 @@ export default {
     const contents = ref(null);
     const allTexts = ref([]);
     const date = ref();
-    const content = ref(null)
+    const content = ref(null);
 
     function getDrName() {
       drName = route.params.private;
@@ -58,7 +58,6 @@ export default {
           allTexts.value.push({
             id: doc.id,
             content: doc.data().content,
-            // date: doc.data().date.toDate().toDateString(),
             date: convertTimeStamp(Date.now()),
           });
         });
@@ -73,7 +72,6 @@ export default {
       getDbText();
     });
 
-
     watchEffect(() => getDrName());
     return {
       drName,
@@ -82,7 +80,7 @@ export default {
       allTexts,
       date,
       convertTimeStamp,
-      content
+      content,
     };
   },
 };
