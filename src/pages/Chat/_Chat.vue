@@ -8,18 +8,15 @@
         stamp="7 minutes ago"
         bg-color="amber-7"
       />
-
       <q-chat-message
-        v-for="content in contents"
-        :key="content.id"
-        name="me"
+        :name="drName"
         avatar="https://cdn.quasar.dev/img/avatar5.jpg"
-        :text="[...contents]"
-        :stamp="[...date]"
-        size="8"
+        :text="[...Array.from(contents)]"
+        bg-color="accent"
         sent
         text-color="white"
-        bg-color="accent"
+        size="8"
+
       />
     </div>
   </div>
@@ -28,7 +25,7 @@
 <script>
 import { useRoute } from "vue-router";
 
-import { ref, onMounted, watchEffect, onCreated } from "vue";
+import { ref, onMounted, watchEffect, onActivated } from "vue";
 import { db } from "src/boot/firebase";
 import { collection, query, onSnapshot } from "firebase/firestore";
 import { formatDistance } from "date-fns";
@@ -37,10 +34,10 @@ export default {
   setup() {
     const route = useRoute();
     let drName = ref("");
-    const contents = ref(null);
+    const contents = ref([]);
     const allTexts = ref([]);
     const date = ref();
-    const content = ref(null);
+    const content = ref("");
 
     function getDrName() {
       drName = route.params.private;
@@ -52,8 +49,8 @@ export default {
     }
 
     async function getDbText() {
-      const q = query(collection(db, "chats"));
-      onSnapshot(q, (snap) => {
+      const queryDb = query(collection(db, "chats"));
+      onSnapshot(queryDb, (snap) => {
         snap.forEach((doc) => {
           allTexts.value.push({
             id: doc.id,
@@ -63,7 +60,6 @@ export default {
         });
         contents.value = allTexts.value.map((item) => item.content);
         date.value = allTexts.value.map((myDate) => myDate.date);
-        // console.log(contents);
       });
     }
 
@@ -71,7 +67,6 @@ export default {
       getDrName();
       getDbText();
     });
-
     watchEffect(() => getDrName());
     return {
       drName,
