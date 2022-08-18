@@ -12,11 +12,11 @@
         :name="drName"
         avatar="https://cdn.quasar.dev/img/avatar5.jpg"
         :text="[...Array.from(contents)]"
+        :stamp="date[0]"
         bg-color="accent"
         sent
         text-color="white"
         size="8"
-
       />
     </div>
   </div>
@@ -36,7 +36,7 @@ export default {
     let drName = ref("");
     const contents = ref([]);
     const allTexts = ref([]);
-    const date = ref();
+    const date = ref(Date.now());
     const content = ref("");
 
     function getDrName() {
