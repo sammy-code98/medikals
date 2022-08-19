@@ -33,49 +33,63 @@
 
       <q-dialog v-model="prompt" persistent>
         <q-card style="min-width: 350px">
-          <q-card-section>
-            <div class="text-h6 text-accent text-center">
-              Make An Appointment
-            </div>
-          </q-card-section>
+          <q-form @submit.prevent="makeAppointment">
+            <q-card-section>
+              <div class="text-h6 text-accent text-center">
+                Make An Appointment
+              </div>
+            </q-card-section>
 
-          <q-card-section class="q-pt-none">
-            <q-input
-              dense
-              outlined
-              class="text-font text-subtitle1 q-mb-md"
-              v-model="docName"
-            />
+            <q-card-section class="q-pt-none">
+              <q-input
+                dense
+                outlined
+                class="text-font text-subtitle1 q-mb-md"
+                v-model="docName"
+              />
 
-            <q-input
-              dense
-              outlined
-              class="text-font text-subtitle1 q-mb-md"
-              v-model="docField"
-            />
+              <q-input
+                dense
+                outlined
+                class="text-font text-subtitle1 q-mb-md"
+                v-model="docField"
+              />
 
-            <q-input
-              dense
-              outlined
-              autofocus
-              v-model="date"
-              class="text-font text-subtitle1 q-mb-md"
-              type="date"
-              hint="Pick an Appointment Date"
-            />
-            <q-input
-              dense
-              outlined
-              v-model="time"
-              type="time"
-              hint="Pick an Appointment Time"
-            />
-          </q-card-section>
+              <q-input
+                dense
+                outlined
+                autofocus
+                v-model="date"
+                class="text-font text-subtitle1 q-mb-md"
+                type="date"
+                hint="Pick an Appointment Date"
+                lazy-rules
+                :rules="[
+                  (val) => (val && val.length > 0) || 'Please pick a date',
+                ]"
+              />
+              <q-input
+                dense
+                outlined
+                v-model="time"
+                type="time"
+                hint="Pick an Appointment Time"
+                lazy-rules
+                :rules="[
+                  (val) => (val && val.length > 0) || 'Please pick a time',
+                ]"
+              />
+            </q-card-section>
 
-          <q-card-actions align="right" class="text-primary">
-            <q-btn flat label="Cancel" v-close-popup />
-            <q-btn flat label="Add Appointment" v-close-popup />
-          </q-card-actions>
+            <q-card-actions align="right" class="text-primary">
+              <q-btn flat label="Cancel" v-close-popup />
+              <q-btn
+                flat
+                label="Add Appointment"
+                type="submit"
+              />
+            </q-card-actions>
+          </q-form>
         </q-card>
       </q-dialog>
     </q-footer>
@@ -88,14 +102,17 @@
 
 <script>
 import { ref, onMounted, watchEffect } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
+import { useQuasar } from "quasar";
 
 export default {
   name: "MainLayout",
   setup() {
     const route = useRoute();
+    const router = useRouter();
     let name = ref("");
     let field = ref("");
+    const $q = useQuasar();
 
     function getName() {
       name.value = route.params.profile;
@@ -103,6 +120,15 @@ export default {
 
     function getField() {
       field.value = route.params.speciality;
+    }
+
+    function makeAppointment() {
+      $q.notify({
+        message: "Appointment Booked  Successfully",
+        position: "top-right",
+        color: "accent",
+      });
+      router.push("/appointments");
     }
     onMounted(() => {
       getName();
@@ -121,6 +147,7 @@ export default {
       docField: ref(field),
       getName,
       getField,
+      makeAppointment,
     };
   },
 };
