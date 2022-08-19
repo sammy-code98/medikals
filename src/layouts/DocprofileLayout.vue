@@ -44,6 +44,7 @@
               <q-input
                 dense
                 outlined
+                readonly
                 class="text-font text-subtitle1 q-mb-md"
                 v-model="docName"
               />
@@ -51,6 +52,7 @@
               <q-input
                 dense
                 outlined
+                readonly
                 class="text-font text-subtitle1 q-mb-md"
                 v-model="docField"
               />
